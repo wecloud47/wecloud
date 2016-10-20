@@ -1,0 +1,25 @@
+<html>
+<body>
+<html><body>
+<style>
+table, th, td {
+    border: 2px solid green;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 1px;
+}
+</style>
+<table style="width:25%">
+<tr><th bgcolor="#C2C2D6">User</th><th bgcolor="#C2C2D6">Database</th><th bgcolor="#C2C2D6">Password</th></tr>
+
+{% for Member in MembersForm %}
+ <tr><td><center>{{ Member.user }}</center></td><td><center>  {{ Member.DB }}</center></td><td><center>  {{ Member.password }}</center></td></tr>
+
+
+{% endfor %}
+
+</table>
+
+    </body>
+</html>

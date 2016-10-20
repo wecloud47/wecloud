@@ -1,0 +1,23 @@
+<html><body>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 3px;
+}
+</style>
+<table style="width:35%">
+<tr><th bgcolor="#C2C2D6">id</th><th bgcolor="#C2C2D6">name</th><th bgcolor="#C2C2D6">tpe</th><th bgcolor="#C2C2D6">db</th><th bgcolor="#C2C2D6">entry</th></tr>
+
+           {% for db in dab %}
+           <tr><td><center>{{ db.id }}</center></td>
+           <td><center> <a href="/db/get/{{ db.id }}/">{{ db.name }}</a></center></td>
+           <td><center>{{ db.tpe }}</center></td>
+           <td><center>{{ db.db }}</center></td>
+           <td><center>{{ db.entry }}</center></td></tr>
+           {% endfor %}
+</table>
+</body></html>
+

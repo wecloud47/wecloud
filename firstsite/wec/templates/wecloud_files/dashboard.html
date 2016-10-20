@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% block top %}
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('http://dragontour.pythonanywhere.com/media/body-bg.jpg');
+    background-size: 21%;
+    background-repeat: repeat-x;
+    background-attachment: absolute;
+
+    z-index: 6;
+
+}
+</style>
+{% endblock %}
+</head>
+<body>
+<head>
+<style>
+
+
+p.pos_img {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+
+    margin-left: -434px;
+    z-index: 1;
+}
+p.pos_foot{
+    background-color: #212528;
+    padding: 25px 50px;
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    margin-top: 1680px;
+    width: 100%;
+    z-index: 1;
+}
+p.pos_test{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    margin-top: 130px;
+    margin-left: -434px;
+    z-index: 9;
+
+}
+p.pos_content{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    margin-top: 250px;
+    margin-left: -434px;
+    z-index: 9;
+
+}
+</style>
+</head>
+
+
+<div style="position:absolute; top:0%; left:50%; margin-top: 18px; margin-left: -434px; z-index:9;">
+{% block tlogo %}
+<img src="/media/logo.gif" >
+{% endblock %}
+</div>
+
+<div style="position:absolute; top:0%; left:0%; margin-top: 0px; margin-left: 0px; z-index:9;">
+  <b><font face="Georgia" color="white" size="2"></font> <font face="Georgia" color="18C9C1" size="2"> </font></b>
+</div>
+
+<div style="position:absolute; top:0%; left:50%; margin-top: 0px; margin-left: 325px; z-index:9;">
+</div>
+
+<div style="position:absolute; top:0%; left:50%; margin-top: 200px; margin-left: -435px; z-index:9;">
+</div>
+
+<div style="position:absolute; top:0%; left:50%; margin-top: 250px; margin-left: -434px; z-index:9;">
+{% block main %}
+<font face="Palatino Linotype" color=#3F485B size="6">
+Welcome to WeCloud &nbsp; {{User}}!</font><br><br>
+<font face="Palatino Linotype" color=#59698A size="3">
+To better assist you we have emailed a link helping you get started.<br>
+
+There you can set up your user name along with your password and begin your journey with WeCloud.<br>
+<br>
+
+<br><br>
+{% endblock %}
+</div>
+
+
+
+
+<p class="pos_foot">
+<font face="Georgia" color="white" size="2">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Custom Database Systems&nbsp;&copy;</font>
+</p>
+
+<div style="position:absolute; top:0%; left:50%; margin-top: 250px; margin-left: -435px; z-index:9;">
+{% block content %}
+
+{% endblock %}
+</div>
+
+</body></html>

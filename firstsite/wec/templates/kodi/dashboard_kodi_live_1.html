@@ -1,0 +1,70 @@
+{% extends "dashboard_main_kodi.html" %}
+
+
+{% block head1 %}
+
+{% endblock %}
+
+
+{% block content %}
+	<br><br><br>
+    <div class="row">
+		<div class="col-sm-2"></div>
+		
+
+		<div class="col-sm-8" style="background-color:#000000;border-style: ridge;border-width: 5px;border-color: #A4A4A4;border-radius: 15px;">
+                <font color="white" style="z-index: 9999;"><center>
+                <h3><b><u>Steps to Live TV (Castaway + New Favorites)</u></b></h3><a href="https://www.youtube.com/watch?v=syppyjzbZC0" style="color: #58FAF4"><b>(Video for lazy people)</b></a>
+				
+				</center>
+				<p><font color="##BFFF00">Below are steps to installing Castaway which has many live feeds.  Some work and some don't but it's a nice site to pick
+				up live channels.  I also put together in the Live2 folder a new Favorites file you can add that has many of the popular
+				channels that do work if you want to save time.  Enjoy !  </font></p>
+				<br>
+                <p>1. Download the zip file <a href="/static/kodi/Live2.zip" style="color: #58FAF4"><b>Live2</b></a> and extract it
+					to a flash drive.</p>
+				<p>2. Your flash drive should now have two files  <font color="##BFFF00"><b>Live2.zip</b></font> and 
+						<font color="##BFFF00"><b>favourites.xml</b></font> (DO NOT UNZIP castaway.zip file)
+			
+				</p>
+				<p>3. Plug your flash drive into one of your USB slots on your Android Box / OpenElec Raspberry Pi or 
+				computer running XBMC.  It's recommended your unit be off prior to doing this to avoid unexpected 
+				shutdowns.</p>
+				
+				
+				<p>4. Open XBMC/ Kodi and navigate to SYSTEM  then SETTINGS.  Then select Add-Ons and choose 
+				Install from zip file.  Look for your flash drive name and select it then click on castaway.zip..</p>
+				
+				<p>5. Then, without exiting that screen, click on Get_Add Ons directly above install from zip.  
+				Click on natko1412 repo then click on Video-Addons and then Castaway and Install.
+				This will install Castaway so if you check your Video section Addons you will see it.</p>
+				
+				<p>6.  Now go back to SYSTEM then FILE MANAGER.   On the left double click on Profile Directory.
+				On the right select your flash drive again.  Now RIGHT CLICK on favourites.xml and choose copy
+				and click ok to confirm.</p>
+				
+				<p>That's It !   Your favourites (STAR) in the bottom left of kodi now contains all live 
+				channels to watch at your convenience.  </p>	
+				
+				<p> ---- This tutorial was brought to you by WeCloud !</p>	
+				
+				
+					
+			</font>
+        </div>
+		
+		<div class="col-sm-2"></div>
+	</div>	<br><br>
+	<div class="row">
+		<div class="col-sm-12" style="background-color:#000000;border-style: solid;border-width: 1px;opacity: 0.7;filter:alpha(opacity=70);border-color: #A4A4A4;border-radius: 15px;">
+			<font color="white" style="z-index: 9999;">
+			<p><u> Note:</u>  There will be channels that will somedays work and somedays not.  You may also experience some 
+			channels that are buffering alot, this is not a bad connection it's just a poor link that will be fixed.
+			Keep in mind it's all free and you just have to take what you can get.  When one channel doesn't work try it 
+			again in a few days and you may find it's back up.</p>
+		</div>
+	</div>	
+		
+		{% endblock %}
+
+

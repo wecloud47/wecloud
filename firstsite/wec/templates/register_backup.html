@@ -1,0 +1,42 @@
+
+{% extends "pmain.html" %}
+
+{% block b1 %}
+<A HREF="/"
+   onMouseOver="hiLite('img06','bb12')"
+   onMouseOut="hiLite('img06','bb11')"><IMG
+   SRC="/media/m1.png"
+   BORDER="0" ALT="" NAME="img06"></A>
+{% endblock %}
+
+{% block b5 %}
+<img src="/media/m5-act.png" >
+{% endblock %}
+
+{% block center %}
+<form action="" method="post">{% csrf_token %}
+<table>
+    {{form.as_table}}
+</table>
+{% endblock %}
+
+{% block button %}
+<input id="butt" type="submit" name="submit" value="Submit"/>
+</form>
+{% endblock %}
+
+{% block content %}
+<font face="Palatino Linotype" color=#3F485B size="6">
+Registration!</font><br><br>
+<font face="Palatino Linotype" color=#59698A size="3">
+Registration is Free!  You can sign up and use all services<br>
+offered by MyCloud, including 1 application free for 1 month.<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br><br>
+{% endblock %}

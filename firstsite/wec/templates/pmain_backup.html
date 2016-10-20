@@ -1,0 +1,290 @@
+<html>
+<style>
+body { margin:0;background-color: #2AB2C7;}
+
+ul {
+  text-align: left;
+  display: inline;
+  margin-top: -5%;
+  margin: 0;
+  padding: 15px 4px 70%;
+  list-style: none;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.15);
+}
+ul li {
+  font: bold 14px/14px sans-serif;
+  color:#fff;
+  display: inline-block;
+  margin-right: -4px;
+  position: relative;
+  padding: 5px 30px;
+
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+ul li:hover {
+  background: #D9D9D9;
+  color: #000;
+  border-radius: 10px;
+
+}
+ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 150px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s;
+}
+ul li ul li {
+  background: #555;
+  display: block;
+  color: #82A9E8;
+  text-shadow: 0 -1px 0 #000;
+}
+ul li ul li:hover { background: #666; }
+ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+	/* ********************************************************************************************************************** */
+	/* **** CSS for creating popup when we click view more    ************************************************************** */
+	/* ********************************************************************************************************************** */
+	  label {position: relative;}
+
+		.box {position: absolute;left: -150px;top: -400px;z-index: 100;
+		/* Prevent some white flashing in Safari 5.1 */
+		-webkit-backface-visibility: hidden;
+			background-color: #eeeeee;
+			background-image: -webkit-gradient(linear, left top, left bottom, from(#D2E4E3), to(#5E807F));
+			background-image: -webkit-linear-gradient(top, #D2E4E3, #5E807F);
+			background-image:    -moz-linear-gradient(top, #D2E4E3, #5E807F);
+			background-image:     -ms-linear-gradient(top, #D2E4E3, #5E807F);
+			background-image:      -o-linear-gradient(top, #D2E4E3, #5E807F);
+            border-style: solid;
+            border-width: 2px;
+			border-color: #575757;
+			-moz-border-radius:    20px;
+			-webkit-border-radius: 20px;
+			border-radius:         20px;
+			-moz-background-clip:    padding;
+			-webkit-background-clip: padding-box;
+			background-clip:         padding-box;
+			width: 300px;
+			height: 300px;
+			padding: 20px;
+			margin: 24px 0;
+			opacity: 0;
+			-webkit-transform: scale(0) skew(50deg);
+			-moz-transform:    scale(0) skew(50deg);
+			-ms-transform:     scale(0) skew(50deg);
+			-o-transform:      scale(0) skew(50deg);
+			-webkit-transform-origin: 0px -30px;
+			-moz-transform-origin:    0px -30px;
+			-ms-transform-origin:     0px -30px;
+			-o-transform-origin:      0px -30px;
+			-webkit-transition: -webkit-transform ease-out .35s, opacity ease-out .4s;
+			-moz-transition:    -moz-transform    ease-out .35s, opacity ease-out .4s;
+			-ms-transition:     -ms-transform     ease-out .35s, opacity ease-out .4s;
+			-o-transition:      -o-transform      ease-out .35s, opacity ease-out .4s;
+		}
+        /*  Below is arrow point.  border-top for down border-bottom for up,  solid is color  */
+		.box:after {content: "";position: absolute;top: 100%;left: 50%;border-top: 20px solid #5E807F;border-left:   14px solid transparent;border-right:  14px solid transparent;width:  0;height: 0;}
+
+		.popUpControl:checked ~ label > .box {
+			opacity: 1;
+			-webkit-transform: scale(1) skew(0deg);
+			-moz-transform:    scale(1) skew(0deg);
+			-ms-transform:     scale(1) skew(0deg);
+			-o-transform:      scale(1) skew(0deg);
+		}
+		.popUpControl {
+		  display: none;
+		}
+		/* For link example */
+		.link { color: blue; text-decoration: underline; }
+		.title { display: block; font-weight: bold; margin: 0 0 10px 0; color: black; font: bold 16px Sans-Serif; text-decoration: none; }
+    .copy { color: black; text-decoration: none;  }
+    /* ********************************************************************************************************************** */
+
+{% comment %}****************************************
+***  Set CSS for fading banner   ********************
+*****************************************************{% endcomment %}
+header { position: absolute; top: 25%; left: 20%;}
+@-webkit-keyframes cf4FadeInOut {0% { opacity:1;}17% { opacity:1;}25% { opacity:0;}92% { opacity:0;}100% { opacity:1;}}
+@-moz-keyframes cf4FadeInOut {0% { opacity:1; }17% { opacity:1; }25% { opacity:0; }92% { opacity:0; }100% { opacity:1; }}
+@-o-keyframes cf4FadeInOut {0% { opacity:1; }17% { opacity:1; }25% { opacity:0; }92% { opacity:0; }100% { opacity:1; }}
+@keyframes cf4FadeInOut {0% { opacity:1; }17% { opacity:1; }25% { opacity:0; }92% { opacity:0; }100% { opacity:1; }}
+#cf4a {position:absolute;bottom :{{PX2}}px;width : 80%;margin-left: 10%;z-index: 8;}
+#cf4a img {position:absolute;border: 0px solid #a1a1a1;left:0;}
+#cf4a img {
+  -webkit-animation-name: cf4FadeInOut;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 32s;
+
+  -moz-animation-name: cf4FadeInOut;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-duration: 32s;
+
+  -o-animation-name: cf4FadeInOut;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-iteration-count: infinite;
+  -o-animation-duration: 32s;
+
+  animation-name: cf4FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 32s;
+}
+#cf4a img:nth-of-type(1) {-webkit-animation-delay: 24s;-moz-animation-delay: 24s;-o-animation-delay: 24s;animation-delay: 24s;}
+#cf4a img:nth-of-type(2) {-webkit-animation-delay: 16s;-moz-animation-delay: 16s;-o-animation-delay: 16s;animation-delay: 16s;}
+#cf4a img:nth-of-type(3) {-webkit-animation-delay: 8s;-moz-animation-delay: 8s;-o-animation-delay: 8s;animation-delay: 8s;}
+#cf4a img:nth-of-type(4) {-webkit-animation-delay: 0;-moz-animation-delay: 0;-o-animation-delay: 0;animation-delay: 0;}
+
+{% comment %}****************************************
+Set Containers and Subcontainers ********************
+*****************************************************{% endcomment %}
+
+.head { position: relative; top: 0%; left: 5%; width:90%;border:0px solid #cccccc; background:#ffff00; height:40px;}
+.menu { position: relative; top: -10px; left: 0px; width:100%;height:80px;}
+.mbody { position: relative; top: -10px; left: 0px; width:100%; border:0px solid #cccccc; background:#E1E6E5; height:1000px;}
+.foot {position: relative;top: -10px;left: 0px;width:100%;border:0px solid #cccccc;background:#2AB2C7;height:70px;}
+div.hd1 {position: absolute;top: 10px;left: 50px;width:10%;padding:1px;background:#E67D49; border:1px solid gray;}
+div.hd2 {position: absolute;top: 0px;width:100%;margin-left:33%;}
+div.hd4 {position: absolute; top: 45px; left:{{X_pos_title}}px;z-index: 9;}
+div.hd4a {position: absolute; top: 5px; left:{{X_pos_cloud}}px;z-index: 3;}
+div.hd5 {position: absolute; top: 240px; left:{{Bl1}}px;width:{{Bw}}px;height:{{Bh}}px;border:2.5px solid #000000; background:#E1E6E5;	border-radius: 25px;}
+div.hd6 {position: absolute; top: 240px; left:{{Bl2}}px;width:{{Bw}}px;height:{{Bh}}px;border:2.5px solid #000000; background:#E1E6E5;	border-radius: 25px;}
+div.hd7 {position: absolute; top: 240px; left:{{Bl3}}px;width:{{Bw}}px;height:{{Bh}}px;border:2.5px solid #000000; background:#E1E6E5;	border-radius: 25px;}
+div.hd8 {position: absolute; top: 240px; left:{{Bl4}}px;width:{{Bw}}px;height:{{Bh}}px;border:2.5px solid #000000; background:#E1E6E5;	border-radius: 25px;}
+div.hd3 {position: absolute;top: 60%;left:42%;width:58%;}
+div.ad1 {position: absolute;bottom: 2%;left:40%;}
+div.foot1 {position: absolute;top: 0%;width:100%;}
+div.i2 {position: absolute;top: 1px;left: 50px;width:10%;padding:1px;background:#E67D49;border:1px solid gray;}
+#content {position: relative;top: -10px;left: 0px;border:0px solid #cccccc;background:#ffff00;height:{{ PX }}px;width:100%;}
+
+a:link {color: #FFFFFF;text-decoration: none;}
+a:visited {color: #FFFFFF;text-decoration: none;}
+a:active {color: #FFFFFF;text-decoration: none;}
+a:hover {color: #000000;text-decoration: none;}
+
+</style>
+<body>
+<div class="menu">
+<img src="/media/m1bord.jpg" height="100%" width="100%"/>
+<div class="hd4"><img src="/media/title.png" height="{{Ytitle}}px" width="{{Xtitle}}px"/></div>
+<div class="hd4a"><img src="/media/cloud.gif" height="{{Ycloud}}px" width="{{Xcloud}}px"></div>
+<div class="hd3"><center><ul><li>Home</li><li>About</li><li>Contact</li><li><a href="/register">Sign Up</a></li><li>Login</li></ul></center></div>
+</div>
+<div id="content"><img src="/media/m2bord.jpg" height="100%" width="100%"/>
+
+<div id="cf4a" class="shadow">
+  <img style="border:3px solid #ffffff;	border-radius: 25px;" src="/media/4.jpg" height="{{PX}}px" width="100%"/>
+  <img style="border:3px solid #ffffff;	border-radius: 25px;" src="/media/3.jpg" height="{{PX}}px" width="100%"/>
+  <img style="border:3px solid #ffffff;	border-radius: 25px;" src="/media/2.jpg" height="{{PX}}px" width="100%"/>
+  <img style="border:3px solid #ffffff;	border-radius: 25px;" src="/media/1.jpg" height="{{PX}}px" width="100%"/>
+</div>
+</div>
+
+<div class="mbody">
+    <div class="foot1"><img src="/media/bar.gif" height="5px" width="100%"/></div>
+    <div class="hd5"><img style="border:3px solid #ffffff;	border-radius: 25px;" src="/media/bban1.jpg" height="100%" width="100%"/>
+    <div class="ad1">
+<!--**********************************************************************************************************************-->
+<!--**** HTML for Popup box for viewmore1 *********************************************************************************-->
+<!--**********************************************************************************************************************-->
+
+<input type="checkbox" id="linkie" class="popUpControl">
+<label for="linkie" class="link">
+<span><img src="/media/viewmore.jpg"></span>
+<span class="box">
+<!--**** Add Comments for popup box below *********************************************************************************-->
+<span class="title">WebPage Design</span>
+<span class="copy">Have a customized web page created just for you. </span>
+<span class="copy">Each web page will have it's own domain name of your choice</span>
+<span class="copy">along with your own personal email.  Your web page will be</span>
+<span class="copy">created and set up free of charge for one month so you have</span>
+<span class="copy">the freedom of </span>
+</span>
+</label>
+<!--**********************************************************************************************************************-->
+        </div></div>
+    <div class="hd6"><img style="border:3px solid #ffffff;	border-radius: 25px;" src="/media/bban2.jpg" height="100%" width="100%"/>
+    <div class="ad1">
+<!--**********************************************************************************************************************-->
+<!--**** HTML for Popup box for viewmore2 *********************************************************************************-->
+<!--**********************************************************************************************************************-->
+<input type="checkbox" id="linkie2" class="popUpControl"><label for="linkie2" class="link">
+<span><img src="/media/viewmore.jpg"></span><span class="box">
+<!--**** Add Comments for popup box below *********************************************************************************-->
+<span class="title">Web Apps</span>
+<span class="copy"> </span>
+<span class="copy"></span>
+<span class="copy"></span>
+<span class="copy"></span>
+<span class="copy"> </span>
+</span>
+</label>
+<!--**********************************************************************************************************************-->
+</div></div>
+    <div class="hd7"><img style="border:3px solid #ffffff;	border-radius: 25px;" src="/media/bban3.jpg" height="100%" width="100%"/>
+    <div class="ad1">
+<!--**********************************************************************************************************************-->
+<!--**** HTML for Popup box for viewmore3 *********************************************************************************-->
+<!--**********************************************************************************************************************-->
+<input type="checkbox" id="linkie3" class="popUpControl"><label for="linkie3" class="link">
+<span><img src="/media/viewmore.jpg"></span><span class="box">
+<!--**** Add Comments for popup box below *********************************************************************************-->
+<span class="title">Packages</span>
+<span class="copy"> </span>
+<span class="copy"></span>
+<span class="copy"></span>
+<span class="copy"></span>
+<span class="copy"> </span>
+</span>
+</label>
+<!--**********************************************************************************************************************-->
+    </div></div>
+    <div class="hd8"><img style="border:3px solid #ffffff;	border-radius: 25px;" src="/media/bban4.jpg" height="100%" width="100%"/>
+    <div class="ad1">
+<!--**********************************************************************************************************************-->
+<!--**** HTML for Popup box for viewmore4 *********************************************************************************-->
+<!--**********************************************************************************************************************-->
+<input type="checkbox" id="linkie4" class="popUpControl"><label for="linkie4" class="link">
+<span><img src="/media/viewmore.jpg"></span><span class="box">
+<!--**** Add Comments for popup box below *********************************************************************************-->
+<span class="title">About WeCloud</span>
+<span class="copy"> </span>
+<span class="copy"></span>
+<span class="copy"></span>
+<span class="copy"></span>
+<span class="copy"> </span>
+</span>
+</label>
+<!--**********************************************************************************************************************-->
+    </div></div>
+</div>
+<div class="foot">
+    <div class="foot1"><img src="/media/bar.gif" height="5px" width="100%"/></div>
+    <br><center>{{ X }} / {{ YY }} Height:{{Bh}} / Width:{{Bw}}</center></div>
+</body>
+</html>

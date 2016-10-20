@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/media/body-bg.jpg');
+
+    background-repeat: repeat-x;
+    background-attachment: absolute;
+
+    z-index: 6;
+
+}
+
+</style>
+</head>
+<body>
+<SCRIPT LANGUAGE="JavaScript"><!--
+
+// preload images:
+if (document.images) {
+bb1= new Image(75,22); bb1.src = "/media/m2.png";
+bb2 = new Image(75,22); bb2.src = "/media/m2-act.png";
+bb3= new Image(75,22); bb3.src = "/media/m3.png";
+bb4 = new Image(75,22); bb4.src = "/media/m3-act.png";
+bb5= new Image(75,22); bb5.src = "/media/m4.png";
+bb6 = new Image(75,22); bb6.src = "/media/m4-act.png";
+bb7= new Image(75,22); bb7.src = "/media/m5.png";
+bb8 = new Image(75,22); bb8.src = "/media/m5-act.png";
+bb9= new Image(75,22); bb9.src = "/media/m6.png";
+bb10 = new Image(75,22); bb10.src = "/media/m6-act.png";
+bb11= new Image(75,22); bb11.src = "/media/m1.png";
+bb12 = new Image(75,22); bb12.src = "/media/m1-act.png";
+}
+
+function hiLite(imgName,imgObjName) {
+if (document.images) {
+  document.images[imgName].src = eval(imgObjName + ".src");
+}}
+
+//--></SCRIPT>
+
+<head>
+<style>
+#butt {
+    background-color: #9EDBD8;
+    width:90px;
+    height:30px;
+    font-family:verdana,arial,helvetica,sans-serif;
+    padding: 5px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    font-size:12px;
+    font-color:white;
+ }
+
+p.pos_logo {
+    top: 0%;
+    left: 50%;
+    position: absolute;
+    margin-top: 194px;
+    margin-left: -460px;
+    z-index: 1;
+}
+p.mlogo {
+    top: 0%;
+    left: 50%;
+    position: absolute;
+    margin-top: 123px;
+    margin-left: 170px;
+    z-index: 4;
+}
+p.pos_img {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    margin-top: 10px;
+    margin-left: -434px;
+    z-index: 1;
+}
+p.pos_b1{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    position: absolute;
+    margin-top: 126px;
+    margin-left: -460px;
+    z-index: 9;
+}
+p.pos_b2{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    margin-top: 126px;
+    margin-left: -367px;
+    z-index: 8;
+}
+p.pos_b3{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    margin-top: 126px;
+    margin-left: -268px;
+    z-index: 8;
+}
+p.pos_b4{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    margin-top: 126px;
+    margin-left: -147px;
+    z-index: 8;
+}
+p.pos_b5{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    margin-top: 126px;
+    margin-left: -29px;
+    z-index: 8;
+}
+p.pos_b6{
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    margin-top: 126px;
+    margin-left: 97px;
+    z-index: 100;
+}
+p.pos_content{
+    top: 0%;
+    left: 50%;
+    position: absolute;
+    margin-top: 515px;
+    margin-left: -445px;
+    z-index: 1;
+}
+p.pos_news1{
+    top: 0%;
+    left: 50%;
+    position: absolute;
+    margin-top: 870px;
+    margin-left: -460px;
+    z-index: 1;
+}
+p.pos_news2P{
+    top: 0%;
+    left: 50%;
+    position: absolute;
+    margin-top: 950px;
+    margin-left: -460px;
+    z-index: 1;
+}
+p.pos_news2{
+    top: 0%;
+    left: 50%;
+    position: absolute;
+    margin-top: 980px;
+    margin-left: -460px;
+    z-index: 1;
+}
+p.pos_foot{
+    background-color: #212528;
+    padding: 25px 50px;
+    top: 0%;
+    left: 0%;
+    position: absolute;
+    margin-top: 1680px;
+    width: 100%;
+    z-index: 1;
+}
+p.pos_slogana{
+    top: 0%;
+    left: 50%;
+    position: absolute;
+    margin-top: 245px;
+    margin-left: -385px;
+    z-index: 8;
+}
+p.pos_sloganb{
+    top: 0%;
+    left: 50%;
+    position: absolute;
+    margin-top: 268px;
+    margin-left: -385px;
+    z-index: 8;
+}
+</style>
+</head>
+
+
+<p class="mlogo"><img src="/media/merv.gif" ></p>
+<p class="pos_logo"><img src="/media/header-bg.jpg" ></p>
+
+<p class="pos_sloganb"></p>
+<p class="pos_img"><img src="/media/logo.gif" ></p>
+<p class="pos_b1">
+{% block b1 %}
+<img src="/media/m1-act.png" >
+{% endblock %}
+    </p>
+
+<p class="pos_b2">
+<A HREF=""
+   onMouseOver="hiLite('img01','bb2')"
+   onMouseOut="hiLite('img01','bb1')"><IMG
+   SRC="/media/m2.png"
+   BORDER="0" ALT="" NAME="img01"></A></p>
+
+<p class="pos_b3">
+<A HREF="services/"
+   onMouseOver="hiLite('img02','bb4')"
+   onMouseOut="hiLite('img02','bb3')"><IMG
+   SRC="/media/m3.png"
+   BORDER="0" ALT="" NAME="img02"></A></p>
+
+<p class="pos_b4">
+{% block b4 %}
+<A HREF="about/"
+   onMouseOver="hiLite('img03','bb6')"
+   onMouseOut="hiLite('img03','bb5')"><IMG
+   SRC="/media/m4.png"
+   BORDER="0" ALT="" NAME="img03"></A>
+{% endblock %}
+</p>
+<p class="pos_b5">
+{% block b5 %}
+<A HREF="/register"
+   onMouseOver="hiLite('img04','bb8')"
+   onMouseOut="hiLite('img04','bb7')"><IMG
+   SRC="/media/m5.png"
+   BORDER="0" ALT="" NAME="img04"></A>
+ {% endblock %}
+ </p>
+<p class="pos_b6">
+{% block b6 %}
+<A HREF="/login"
+   onMouseOver="hiLite('img05','bb10')"
+   onMouseOut="hiLite('img05','bb9')"><IMG
+   SRC="/media/m6.png"
+   BORDER="0" ALT="" NAME="img05"></A>
+ {% endblock %}
+   </p>
+
+<div style="position:absolute; top:0%; left:50%; margin-top: 217px; margin-left: -385px; z-index:8;">
+<font face="Palatino Linotype" color=#FFFFFF size="3">
+{% block center %}
+<br><br>
+<font face="Arial Black" color="white" size="6"></b>CONTROL</FONT><br>
+<font face="Arial Black" color="white" size="9"></b>YOUR BUSINESS!</FONT>
+{% endblock %}
+</font>
+</div>
+
+<div style="position:absolute; top:0%; left:50%; margin-top: 320px; margin-left: -220px; z-index:8;">
+
+{% block button %}
+{% endblock %}
+</div>
+
+<p class="pos_content">
+{% block content %}
+<font face="Palatino Linotype" color=#3F485B size="6">
+Welcome To Our Company!</font><br><br>
+<font face="Palatino Linotype" color=#59698A size="3">
+If you are looking for customized database systems for your business, you will find them<br>
+here!<br>
+<br>
+WeCloud allows you to customize and manage any style of database best suited for your business<br>
+needs.  Access all your information anytime, anywhere giving you all the flexibility you <br>
+need to properly run your business.  <br>
+<br>
+WeCloud is completely free for the first month allowing you to have complete control and discover<br>
+the full potential or having a fully web driven customized database system.<br><br>
+<br><br>
+{% endblock %}
+</p>
+
+<p class="pos_foot">
+<font face="Georgia" color="white" size="2">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;Custom Database Systems&nbsp;&copy;
+</p>
+
+
+</body></html>

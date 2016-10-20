@@ -1,0 +1,25 @@
+
+/*  Below is Code for a button Style   */
+
+.button {
+    background-color: #000000; /* Black */
+    border: none;
+    color: white;
+}
+
+.button2 {
+    background-color: #000000; 
+	border: none;
+    color: #ffff00; 
+    /* border: 2px solid #4CAF50;  */
+}
+
+.button2:hover {
+    background-color: #222222;
+	border: none;
+    color: #ffff00;
+}
+
+
+/*  Below Code removes all border from buttons on focus  */
+.button2:focus {outline:0;}

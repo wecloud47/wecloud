@@ -1,0 +1,65 @@
+<html><body>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 3px;
+}
+</style>
+
+
+
+<table style="width:35%">
+<tr>
+<td></td>
+           {% for job in Jobs %}
+           <td><center> {{ job.name }}</center></td>
+           {% endfor %}
+           </tr>
+
+                {% for re in Result %}
+
+                 {% comment %}***************************************
+                 ***************  Below Value for end of row  *******
+                 ************************************{% endcomment %}
+                 {% if re == YX %}</tr><tr>
+
+                 {% else %}
+                    {% if re == NX %}
+
+                        {% comment %}***************************************
+                        ***************  Below Value for Untrained   *******
+                        ************************************{% endcomment %}
+                        <td><center><a href="/matrice/get/{{ forloop.counter }}/">0</a></center></td>
+
+                    {% else %}
+                        {% if re == YY %}
+
+                        {% comment %}***************************************
+                        ***************  Below Value for Trained     *******
+                        ************************************{% endcomment %}
+                            <td><center><a href="/matrice/get/{{ forloop.counter }}/">1</a></center></td>
+                        {% else %}
+                            <td> {{ re }}</td>
+                        {% endif %}
+                    {% endif %}
+
+
+                {% endif %}
+                {% endfor %}
+
+{% comment %}*****************************************************************************************
+*****************************  Below Code to create active link to send data *************************
+******************************************************************************************************
+                    <td><center><a href="/matrice/get/{{ re }}/"> {{ re }}</a></center></td>
+******************************************************************************************************
+***************************************************************************************{% endcomment %}
+
+
+             </tr>
+</table>
+
+
+</body></html>

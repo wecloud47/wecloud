@@ -1,0 +1,36 @@
+from django.shortcuts import render_to_response
+from math import trunc
+from django.template import loader
+from django.template import RequestContext
+from django.shortcuts import render
+from firstsite.firstsite.wec.models import Members
+from django.http import HttpResponse
+from firstsite.firstsite.wec.forms import ImagesForm
+from django.http import HttpResponseRedirect
+from django.core.context_processors import csrf
+from smtplib import SMTP
+
+
+def image_upload(request):
+
+    if request.POST:
+        form = ImagesForm(request.POST,request.FILES)
+        if form.is_valid():
+            newimage = form.save(commit=False)
+            newimage.pic = request.FILES['image']
+            #db = request.session["active_db"]
+            newimage.name = request.session["active_db"]
+            newimage.save(newimage.name)
+
+            return render(request,'thanks.html')
+    else:
+        form = ImagesForm()
+    args = {}
+    args.update(csrf(request))
+    args['form'] = form
+
+    return render(request, 'up.html', args)
+
+
+
+

@@ -1,0 +1,8 @@
+
+How to Set Permission off for directory
+==========================================
+dave@localhost:~/firstsite/static/css$ sudo chmod ugo+rw /home/dave/firstsite/firstsite/wec/templates/dashboard_main_b.html
+
+How to Set Permission on for directory
+==========================================
+dave@localhost:~/firstsite/static/css$ sudo chmod ugo-rw /home/dave/firstsite/firstsite/wec/templates/dashboard_main_b.html

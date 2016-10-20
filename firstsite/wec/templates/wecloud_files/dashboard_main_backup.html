@@ -1,0 +1,60 @@
+{% extends "main.html" %}
+<html>
+<head>
+<style>
+{% block style0 %}
+.header_bg{position:absolute;background-color: #000000;opacity: 0.9;filter:alpha(opacity=90); left:0; right:0; top:0; z-index:-40;bottom:0;}
+{% endblock %}
+
+{% block style1 %}
+.banner1_bg{position:absolute;background: linear-gradient(#ffffff, #424242); left:40px; width:{{request.session.active_wr}}px; top:{{request.session.active_y1}}px; height:{{request.session.active_h}}px;z-index:-440;	border-radius: 5px;line-height: {{request.session.active_s1}}%;}
+.form_css{color: #ffffff;display:table;}
+{% endblock %}
+{% block style2 %}
+div.hd3 {position: absolute;top: 10px;left:275px;z-index: 9999;}
+{% endblock %}
+</style>
+</head>
+{% block back %}
+<img alt="full screen background image" src="/media/nback_dash.jpg" id="full-screen-background-image" />
+{% endblock %}
+{% block menu %}
+    <br>
+   <font style="font-size: {{request.session.active_ft}}%;" face="Verdana" color=#FFFFFF >
+    <ul><li><a href="http://www.wecloud.ca/">Home</a></li>
+    <li>About
+    <ul><li>Us</li><li>Them</li><li>All</li></ul>
+    </li>
+    <li>Contact
+    <ul><li>Us</li><li>Them</li><li>All</li></ul>
+    </li>
+    <li><a href="http://www.wecloud.ca/register">Sign Up</a><ul><li>Us</li><li><a href="http://www.wecloud.ca/">Them</a></li><li>All</li></ul></li>
+    <li><a href="http://www.wecloud.ca/login">Logout</a></li></ul></font>
+
+
+{% endblock %}
+{% block user %}
+<font style="font-size: {{request.session.active_ft}}%;" face="Verdana" color=#FFFFFF ><u>Welcome:</u> {{request.session.active_user}}</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<font style="font-size: {{request.session.active_ft}}%;" face="Verdana" color=#FFFFFF right="0px">{{request.session.active_type}}</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+{% endblock %}
+{% block content %}
+
+<img style="position:relative;background:url('/media/bar.gif');background-repeat:repeat;" src="/media/bar.gif" height="1%" width="100%"/>
+<br><Br>
+{% if request.session.active_type = 'Administrator' %}
+   <table style="width:10%"><tr><th><u>Web Sites</u></th></tr>
+       {% for db in W %}
+       <tr><td><center> {{ db.feature_name }}</center></td></tr>
+       {% endfor %}
+   </table><br><br>
+   <table style="width:10%"><tr><th><u>Web Apps</u></th></tr>
+       {% for db in A %}
+       <tr><td><center> {{ db.feature_name }}</center></td></tr>
+       {% endfor %}
+   </table>
+{% else %}
+   You are a lonely peon!
+{% endif %}
+
+{% endblock %}

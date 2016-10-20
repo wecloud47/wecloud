@@ -1,0 +1,55 @@
+ 
+
+<meta http-equiv="refresh" content="1; url=/fill/" />
+
+<html>
+<head>
+<style>
+.banner1_bg{position:absolute;background-color: #ffff00; left:77px; width:90px; top:90px; height:10px;z-index:-990;line-height:90%;}
+.banner2_bg{position:absolute;background-color: #ffff00; left:77px; width:90px; top:100px; height:10px;z-index:-990;line-height:90%;}
+.banner3_bg{position:absolute;background-color: #ffff00; left:77px; width:90px; top:110px; height:10px;z-index:-990;line-height:90%;}
+.banner4_bg{position:absolute;background-color: #ffff00; left:77px; width:90px; top:120px; height:10px;z-index:-990;line-height:90%;}
+.banner5_bg{position:absolute;background-color: #ffff00; left:77px; width:90px; top:130px; height:10px;z-index:-990;line-height:90%;}
+.banner6_bg{position:absolute;background-color: #ffff00; left:77px; width:90px; top:140px; height:10px;z-index:-990;line-height:90%;}
+.banner7_bg{position:absolute;background-color: #ffff00; left:77px; width:90px; top:150px; height:10px;z-index:-990;line-height:90%;}
+.banner8_bg{position:absolute;background-color: #ffff00; left:77px; width:90px; top:160px; height:10px;z-index:-990;line-height:90%;}
+.banner9_bg{position:absolute;background-color: #ffff00; left:77px; width:90px; top:170px; height:10px;z-index:-990;line-height:90%;}
+
+.bannera_bg{position:absolute;background-color: #EB1C1C; left:77px; width:90px; top:90px; height:10px;z-index:-990;line-height:90%;}
+.bannerb_bg{position:absolute;background-color: #EB1C1C; left:77px; width:90px; top:100px; height:10px;z-index:-990;line-height:90%;}
+.bannerc_bg{position:absolute;background-color: #EB1C1C; left:77px; width:90px; top:110px; height:10px;z-index:-990;line-height:90%;}
+.bannerd_bg{position:absolute;background-color: #EB1C1C; left:77px; width:90px; top:120px; height:10px;z-index:-990;line-height:90%;}
+
+div.hd1 {position: absolute;top: 5%; left:5%;z-index: 9999;}
+</style>
+</head>
+
+<body>{{request.session.fill}}
+
+<div class="banner1_bg"><div class="hd1"></div></div>
+<div class="banner2_bg"><div class="hd1"></div></div>
+<div class="banner3_bg"><div class="hd1"></div></div>
+<div class="banner4_bg"><div class="hd1"></div></div>
+<div class="banner5_bg"><div class="hd1"></div></div>
+<div class="banner6_bg"><div class="hd1"></div></div>
+<div class="banner7_bg"><div class="hd1"></div></div>
+<div class="banner8_bg"><div class="hd1"></div></div>
+<div class="banner9_bg"><div class="hd1"></div></div>
+
+ {% if ctr > var1 %}
+<div class="bannera_bg"><div class="hd1"></div></div>
+{% endif %}
+ {% if ctr > var2 %}
+<div class="bannerb_bg"><div class="hd1"></div></div>
+{% endif %}
+ {% if ctr > var3 %}
+<div class="bannerc_bg"><div class="hd1"></div></div>
+{% endif %}
+ {% if ctr > var4 %}
+<div class="bannerd_bg"><div class="hd1"></div></div>
+{% endif %}
+
+
+</body>
+
+</html>

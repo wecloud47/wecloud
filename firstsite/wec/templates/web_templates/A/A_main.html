@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>{{request.session.active_website}}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- BOOTSTRAP LOAD  -->
+  <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"> 
+  <script src="/static/bootstrap/js/jquery.min.js"></script>
+  <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<!-- **************  -->
+
+ <link rel="stylesheet" href="/static/css/main.css">
+ <link rel="stylesheet" href="/static/css/buttons1.css">
+
+</head>
+<body>
+
+
+<img alt="full screen background image" src="/static/wec/wec_company/{{request.session.active_website}}/backA.jpg" id="full-screen-background-image" />
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  
+      <!--
+	  <a href="#" onclick="window.open('/web_edit2', 'newwindow', 'width=300, height=250'); return false;">
+	  <img src="/static/wec/wec_company/{{request.session.active_website}}/logoA.jpg"  height="40" width="170">
+	  </a>
+	  -->
+	  <img src="/static/wec/wec_company/{{request.session.active_website}}/logoA.jpg" width="{{request.session.width}}" height="40">
+	  <!--
+      <img src="/static/wec/wec_company/{{request.session.active_website}}/logoA.jpg"  height="40" width="30">
+	  -->
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+		<li><a href=""></a></li>
+		<li><a href=""></a></li>
+		<li><a href="/home/{{request.session.addy}}">Home</a></li>
+        <li><a href="/home_link/{{list.0.4}}">{{list.0.1}}</a></li>
+        <li><a href="/home_link/{{list.1.4}}">{{list.1.1}}</a></li>
+        <li><a href="/home_link/{{list.2.4}}">{{list.2.1}}</a></li>		
+	    <li><a href="/home_link/{{list.3.4}}">{{list.3.1}}</a></li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+
+
+<br><br><br><br><br>
+{% block content %}
+<font color=#000000 >
+<div class="container">
+
+    <div class="jumbotron" style="background-color:#000000;opacity: 0.6;filter:alpha(opacity=60);border-radius: 25px;">
+        <center><font color="white" style="z-index: 9999;"><h1><b>{{list.4.1}}</b></h1></font>
+        <font color="white" style="z-index: 9999;"><h3><i>{{list.5.1}}</i></h3></font></center>
+        
+    </div>
+<br><br><br><br>
+
+    <div class="row">
+
+        <div class="col-sm-3" style="height:250px;margin-left:22px;background-color: #000000;opacity: 0.6;filter:alpha(opacity=60);z-index: -10;border-radius: 15px;">
+                <font color="white" style="z-index: 9999;"><center>
+                <h3><b>{{list.6.1}}</b></h3></center>
+                <p>{{list.7.1}}
+                
+                </p>
+			</font>
+        </div>
+        <div class="col-sm-1">
+                <font color="white" style="z-index: 9999;"><center>
+                <h3><b></b></h3></center>
+                <p></p>
+                </font>
+        </div>
+        <div class="col-sm-3" style="height:250px;margin-left:22px;background-color: #000000;opacity: 0.6;filter:alpha(opacity=60);border-radius: 15px;">
+                <font color="white" style="z-index: 9999;"><center>
+                <h3><b>{{list.8.1}}</b></h3></center>
+                <p>{{list.9.1}}</p>
+                </font>
+        </div>
+        <div class="col-sm-1">
+                <font color="white" style="z-index: 9999;"><center>
+                <h3><b></b></h3></center>
+                <p></p>
+                </font>
+        </div>
+        <div class="col-sm-3" style="height:250px;margin-left:22px;background-color: #000000;opacity: 0.6;filter:alpha(opacity=60);border-radius: 15px;">
+                <font color="white"><center>
+                <h3><b>{{list.10.1}}</b></h3></center>
+                <p>{{list.11.1}}</p>
+                </font>
+        </div>
+    </div>
+    
+    
+
+        
+</div>
+{% endblock %}	
+<br><br><br><br><br><br>
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted credit">{{list.12.1}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+        <a href="/home/{{request.session.addy}}">Home</a> &nbsp;&nbsp;&nbsp;|
+        <a href="/home_link/{{list.0.4}}">{{list.0.1}}</a> &nbsp;&nbsp;&nbsp;|
+        <a href="/home_link/{{list.1.4}}">{{list.1.1}}</a>&nbsp;&nbsp;&nbsp;|
+        <a href="/home_link/{{list.2.4}}">{{list.2.1}}</a>&nbsp;&nbsp;&nbsp;|
+        <a href="/home_link/{{list.3.4}}">{{list.3.1}}</a>&nbsp;&nbsp;&nbsp;|
+      </div>
+    </div>
+
+
+	</font>
+
+</body>
+</html>

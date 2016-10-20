@@ -27,12 +27,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATIC_ROOT = os.path.join(BASE_DIR, "firstsite/wec/static/")
 
 # Application definition
-MEDIA_ROOT = '/home/dave/firstsite/static'
+MEDIA_ROOT = '/home/dave/firstsite/firstsite/wec/static'
 MEDIA_URL = '/media/'
-STATIC_ROOT = '/home/dave/firstsite/static'
+
+#STATIC_ROOT = '/home/dave/firstsite/firstsite/wec/static'
+#STATIC_ROOT = '/home/dave/firstsite/static'
 STATIC_URL = '/static/'
 
 

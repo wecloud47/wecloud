@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+ <!-- Format for Background image -->
+<style type="text/css">
+html, body {height: 100%;width: 100%;padding: 0;margin: 0;}
+#full-screen-background-image {z-index: -999;min-height: 110%; min-width: 100%;width: 100%;height: 110%;position: fixed;top: 0;  left: 0;}
+	.banner2_bg{position:absolute;background-color: #000000;opacity: 0.8;filter:alpha(opacity=80);width:auto; height:auto;z-index:-440;	border-radius: 25px;;}
+	{% block style1 %}
+.banner1_bg{position:absolute;background-color: #000000;opacity: 0.8;filter:alpha(opacity=80);width:auto; height:auto;z-index:-440;	border-radius: 25px;}
+	{% endblock %}
+	div.hd1 {position: absolute;top: 50%;}
+
+<!-- Border Shadow Effect -->
+.box h3{
+	text-align:center;
+	position:relative;
+
+}
+.box {
+	width:70%;
+	
+	background:#FFF;
+	margin:40px auto;
+}
+
+
+/*==================================================
+ * Effect 1
+ * ===============================================*/
+.effect1{
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+	   -moz-box-shadow: 0 10px 6px -6px #777;
+	        box-shadow: 0 10px 6px -6px #777;
+}
+	
+</style>
+<!-- **************************** -->
+
+  <title>WeCloud</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	</head>
+<body>
+
+<img alt="full screen background image" src="/static/nback_dash.jpg" id="full-screen-background-image" />
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img src="/static/cloud.gif"  height="40" width="170">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="http://www.wecloud.ca"></a></li>
+        <li><a href="http://www.wecloud.ca"></a></li>  
+        <li><a href="http://www.wecloud.ca"> </a></li>
+        <li><a href="/about">   </a></li>
+        <li><a href="/contact"></a></li>
+        <li><a href="/services">  </a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><font style="font-size: 100%;" face="Verdana" color=#FFFFFF>Welcome: {{request.session.active_user}}</font>
+          <br><font style="font-size: 80%;" face="Verdana" color=#FFFFFF>({{request.session.active_type}}) </font></li>
+          <li><a href="">   </a></li><li><a href="">   </a></li>
+        <li><a href="http://www.wecloud.ca"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<font color=#000000 >
+{% block content %}
+<div class="container">
+<div class="row">
+    <div class="col-sm-9">
+        <center><font color="black" style="z-index: 9999;"><h2><b><u>StartPoint</u></b></h2></font></center>
+    </div>
+    </div>    
+<br><br>
+
+    <div class="row">
+
+        <div class="col-sm-3" style="background-color: #B9B5B5;border-style: solid; border-color: #000000; border-width:1px;font-size: 115%;" >
+                <font color="black" style="z-index: 9999;"><center>
+                <h4><b>Web Sites</b></h4></center>
+                <p>
+                    </p>
+			</font>
+        </div>
+        <div class="col-sm-1">
+                <font color="black" style="z-index: 9999;"><center>
+                <h3><b></b></h3></center>
+                <p></p>
+                </font>
+        </div>
+        <div class="col-sm-3">
+                <font color="black" style="z-index: 9999;">
+				
+				<div class="box effect1" style="font-size: 115%;">
+	<h4><b>Web Apps</b></h4>
+</div>
+                </font>
+        </div>
+        <div class="col-sm-1">
+                <font color="white" style="z-index: 9999;"><center>
+                <h3><b></b></h3></center>
+                <p></p>
+                </font>
+        </div>
+        <div class="col-sm-3" style="background-color: #B9B5B5;border-style: solid; border-color: #000000;border-width:1px;font-size: 115%;">
+                <font color="black"><center>
+                <h4><b>Users</b></h4></center>
+                <p>
+                    </p>
+                </font>
+        </div>
+    </div>
+	<div class="row">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-1"></div>
+		<div class="col-sm-3"></div>
+		<div class="col-sm-1"></div>
+		<div class="col-sm-3"><img src="/static/images/images_button_adduser.gif" height="50" width="110"></div>
+		<div class="col-sm-1"></div>
+	</div>
+</div>	
+    
+    
+{% endblock %}	
+	</font>
+</body>
+</html>

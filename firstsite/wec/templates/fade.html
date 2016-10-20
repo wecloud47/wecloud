@@ -1,0 +1,174 @@
+<html>
+<style>
+ul {
+  text-align: left;
+  display: inline;
+  margin-top: -5%;
+  margin: 0;
+  padding: 15px 4px 70%;
+  list-style: none;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.15);
+}
+ul li {
+  font: bold 14px/14px sans-serif;
+  color:#fff;
+  display: inline-block;
+  margin-right: -4px;
+  position: relative;
+  padding: 5px 30px;
+
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+ul li:hover {
+  background: #D9D9D9;
+  color: #000;
+
+}
+ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 150px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s;
+}
+ul li ul li {
+  background: #555;
+  display: block;
+  color: #82A9E8;
+  text-shadow: 0 -1px 0 #000;
+}
+ul li ul li:hover { background: #666; }
+ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+header { position: absolute; top: 25%; left: 20%;}
+@-webkit-keyframes cf4FadeInOut {
+ 0% { opacity:1;}
+ 17% { opacity:1;}
+ 25% { opacity:0;}
+ 92% { opacity:0;}
+ 100% { opacity:1;}
+}
+@-moz-keyframes cf4FadeInOut {
+ 0% { opacity:1; }
+ 17% { opacity:1; }
+ 25% { opacity:0; }
+ 92% { opacity:0; }
+ 100% { opacity:1; }
+}
+@-o-keyframes cf4FadeInOut {
+ 0% { opacity:1; }
+ 17% { opacity:1; }
+ 25% { opacity:0; }
+ 92% { opacity:0; }
+ 100% { opacity:1; }
+}
+@keyframes cf4FadeInOut {
+ 0% { opacity:1; }
+ 17% { opacity:1; }
+ 25% { opacity:0; }
+ 92% { opacity:0; }
+ 100% { opacity:1; }
+}
+#cf4a {position:absolute;top :25%;width : 70%;margin-left: 15%;z-index: 8;}
+#cf4a img {position:absolute;border: 0px solid #a1a1a1;left:0;}
+#cf4a img {
+  -webkit-animation-name: cf4FadeInOut;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 16s;
+
+  -moz-animation-name: cf4FadeInOut;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-duration: 16s;
+
+  -o-animation-name: cf4FadeInOut;
+  -o-animation-timing-function: ease-in-out;
+  -o-animation-iteration-count: infinite;
+  -o-animation-duration: 16s;
+
+  animation-name: cf4FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 16s;
+}
+#cf4a img:nth-of-type(1) {
+  -webkit-animation-delay: 12s;
+  -moz-animation-delay: 12s;
+  -o-animation-delay: 12s;
+  animation-delay: 12s;
+}
+#cf4a img:nth-of-type(2) {
+  -webkit-animation-delay: 8s;
+  -moz-animation-delay: 8s;
+  -o-animation-delay: 8s;
+  animation-delay: 8s;
+}
+#cf4a img:nth-of-type(3) {
+  -webkit-animation-delay: 4s;
+  -moz-animation-delay: 4s;
+  -o-animation-delay: 4s;
+  animation-delay: 4s;
+}
+#cf4a img:nth-of-type(4) {
+  -webkit-animation-delay: 0;
+  -moz-animation-delay: 0;
+  -o-animation-delay: 0;
+  animation-delay: 0;
+}
+{% comment %}**************************************** border-radius: 33px;
+Set Containers and Subcontainers ********************
+*****************************************************{% endcomment %}
+.head { position: relative; top: 0%; left: 5%; width:90%;border:0px solid #cccccc; background:#ffff00; height:40px;}
+.menu { position: relative; top: 0px; left: 0%; width:100%;height:80px;}
+.body { position: relative; top: 0px; left: 0%; width:100%; border:0px solid #cccccc; background:#E1E6E5; height:600px;}
+.foot {position: relative;top: 30px;left: 0%;width:100%;border:0px solid #cccccc;background:#AB657E;height:5%;}
+div.hd1 {position: absolute;top: 10px;left: 50px;width:10%;padding:1px;background:#E67D49; border:1px solid gray;}
+div.hd2 {position: absolute;top: 0px;width:100%;margin-left:33%;}
+div.hd4 {position: absolute; top: 10%; left:10%;}
+div.hd3 {position: absolute;top: 50%;left:45%;width:40%;}
+div.i2 {position: absolute;top: 1px;left: 50px;width:10%;padding:1px;background:#E67D49;border:1px solid gray;}
+#content {position: relative;top: 0px;left: 0%;border:0px solid #cccccc;background:#ffff00;height:280px;width:100%;}
+</style>
+
+<div class="menu"><img src="/media/m1bord.jpg" height="100%" width="100%"/>
+<div class="hd4"><font face="Palatino Linotype" color=#FFFFFF size="8"><b>WECLOUD</b></font></div>
+<div class="hd3">
+<center><ul><li>Home</li><li>About</li><li>Contact</li><li>Register</li><li>Login</li></ul></center>
+</div>
+</div>
+<div id="content"><img src="/media/m2bord.jpg" height="100%" width="100%"/>
+
+<div id="cf4a" class="shadow">
+  <img style="border:5px solid white;" src="/media/4.jpg" height="280px" width="100%"/>
+  <img style="border:5px solid white;" src="/media/3.jpg" height="280px" width="100%"/>
+  <img style="border:5px solid white;" src="/media/2.jpg" height="280px" width="100%"/>
+  <img style="border:5px solid white;" src="/media/1.jpg" height="280px" width="100%"/>
+</div>
+
+</div>
+<div class="body"><br><br><br><br><br><br><center>Width:{{ X }}  Height:{{ Y }}</center>
+</div>
+<div class="foot"></div>
+</html>

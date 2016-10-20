@@ -1,0 +1,13 @@
+<html>
+
+<form action="" method="post">{% csrf_token %}
+
+<!-- Style my form to [form_css]  -->
+<table>
+<tr><td style="text-align:right"><font style="font-size: 90%;" face="Verdana" color=#000000>DB&nbsp;&nbsp;{{form.DB }}</font></td></tr>
+<tr><td style="text-align:right"><font style="font-size: 90%;" face="Verdana" color=#000000>Feature&nbsp;&nbsp;{{ form.feature }}</font></td></tr>
+<tr><td style="text-align:right"><font style="font-size: 90%;" face="Verdana" color=#000000>Feature Name&nbsp;&nbsp;{{ form.feature_name }}</font> </td></tr>
+<tr><td style="text-align:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="butt" type="submit" name="submit" value="Submit"/></td></tr></table>
+
+
+</html>

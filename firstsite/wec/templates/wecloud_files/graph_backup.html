@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<!-- #######################################################
+
+HOW TO CREATE AN INTERACTIVE GRAPH USING CSS3 & JQUERY [TUTORIAL]
+
+"How to create an Interactive Graph using CSS3 & jQuery [Tutorial]" was specially made for DesignModo by our friend Valeriu Timbuc.
+
+Links:
+http://vtimbuc.net
+http://designmodo.com
+http://vladimirkudinov.com
+
+######################################################## -->
+
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>How to create an Interactive Graph using CSS3 & jQuery</title>
+
+	<style>html,body{height:100%}body{background:#f2f2f2 url('img/header.png') no-repeat center top;min-height: 700px;-webkit-box-shadow:inset 0 0 0 5px #f2f2f2,inset 0 0 0 10px #90c0aa,inset 0 0 0 15px #f2f2f2;-mox-box-shadow:inset 0 0 0 5px #f2f2f2,inset 0 0 0 10px #90c0aa,inset 0 0 0 15px #f2f2f2;box-shadow:inset 0 0 0 5px #f2f2f2,inset 0 0 0 10px #90c0aa,inset 0 0 0 15px #f2f2f2;margin:0}#graph-wrapper{width:640px;margin:0 auto;padding-top:275px}</style>
+
+	<link rel="stylesheet" href="/static/css/graph.css">
+<meta name="robots" content="noindex,follow" />
+</head>
+
+<body>
+
+<!-- Graph HTML -->
+<div id="graph-wrapper">
+	<div class="graph-info">
+		<a href="javascript:void(0)" class="visitors">Target</a>
+		<a href="javascript:void(0)" class="returning">Production</a>
+
+		<a href="#" id="bars"><span></span></a>
+		<a href="#" id="lines" class="active"><span></span></a>
+	</div>
+
+	<div class="graph-container">
+		<div id="graph-lines"></div>
+		<div id="graph-bars"></div>
+	</div>
+</div>
+<!-- end Graph HTML -->
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/static/js/jquery.flot.min.js"></script>
+<script>
+$(document).ready(function () {
+
+	// Graph Data ##############################################
+	var graphData = [{
+			// Visits
+			data: [ [6, 50], [7, 50], [8, 50], [9, 50], [10, 50], [11, 50], [12, 50], [13, 50], [14, 50], [15, 50] ],
+			color: '#71c73e'
+		}, {
+			// Returning Visits
+			data: [ [6, 45], [7, 47], [8, 52], [9, 41], [10, 35], [11, 55], [12, 34], [13, 22], [14, 54], [15, 51] ],
+			color: '#77b7c5',
+			points: { radius: 4, fillColor: '#77b7c5' }
+		}
+	];
+
+	// Lines Graph #############################################
+	$.plot($('#graph-lines'), graphData, {
+		series: {
+			points: {
+				show: true,
+				radius: 5
+			},
+			lines: {
+				show: true
+			},
+			shadowSize: 0
+		},
+		grid: {
+			color: '#646464',
+			borderColor: 'transparent',
+			borderWidth: 20,
+			hoverable: true
+		},
+		xaxis: {
+			tickColor: 'transparent',
+			tickDecimals: 2
+		},
+		yaxis: {
+			tickSize: 100
+		}
+	});
+
+	// Bars Graph ##############################################
+	$.plot($('#graph-bars'), graphData, {
+		series: {
+			bars: {
+				show: true,
+				barWidth: .9,
+				align: 'center'
+			},
+			shadowSize: 0
+		},
+		grid: {
+			color: '#646464',
+			borderColor: 'transparent',
+			borderWidth: 20,
+			hoverable: true
+		},
+		xaxis: {
+			tickColor: 'transparent',
+			tickDecimals: 2
+		},
+		yaxis: {
+			tickSize: 100
+		}
+	});
+
+	// Graph Toggle ############################################
+	$('#graph-bars').hide();
+
+	$('#lines').on('click', function (e) {
+		$('#bars').removeClass('active');
+		$('#graph-bars').fadeOut();
+		$(this).addClass('active');
+		$('#graph-lines').fadeIn();
+		e.preventDefault();
+	});
+
+	$('#bars').on('click', function (e) {
+		$('#lines').removeClass('active');
+		$('#graph-lines').fadeOut();
+		$(this).addClass('active');
+		$('#graph-bars').fadeIn().removeClass('hidden');
+		e.preventDefault();
+	});
+
+	// Tooltip #################################################
+	function showTooltip(x, y, contents) {
+		$('<div id="tooltip">' + contents + '</div>').css({
+			top: y - 16,
+			left: x + 20
+		}).appendTo('body').fadeIn();
+	}
+
+	var previousPoint = null;
+
+	$('#graph-lines, #graph-bars').bind('plothover', function (event, pos, item) {
+		if (item) {
+			if (previousPoint != item.dataIndex) {
+				previousPoint = item.dataIndex;
+				$('#tooltip').remove();
+				var x = item.datapoint[0],
+					y = item.datapoint[1];
+					showTooltip(item.pageX, item.pageY, y + ' visitors at ' + x + '.00h');
+			}
+		} else {
+			$('#tooltip').remove();
+			previousPoint = null;
+		}
+	});
+
+});
+</script>
+
+</body>
+
+</html>

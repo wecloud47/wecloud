@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+
+	
+ <!-- Format for Background image -->
+<style type="text/css">
+html, body {height: 100%;width: 100%;padding: 0;margin: 0;}
+#full-screen-background-image {z-index: -999;min-height: 110%; min-width: 100%;width: 100%;height: 110%;position: fixed;top: 0;  left: 0;}
+	.banner2_bg{position:absolute;background-color: #000000;opacity: 0.8;filter:alpha(opacity=80);width:auto; height:auto;z-index:-440;	border-radius: 25px;;}
+	{% block style1 %}
+.banner1_bg{position:absolute;background-color: #000000;opacity: 0.8;filter:alpha(opacity=80);width:auto; height:auto;z-index:-440;	border-radius: 25px;}
+	{% endblock %}
+	div.hd1 {position: absolute;top: 50%;}
+
+   .banner2_bg{position:absolute;background-color: #767c15;	border-radius: 25px;}	
+   
+</style>
+<!-- **************************** -->
+
+  <title>WEC Main Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/drop_down.css">
+  
+<!-- Extra style sheets to add in stylesheet block -->
+{% block stylesheet %}
+{% endblock %}
+	
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
+	</head>
+	
+
+
+<body>
+
+{% block refresh %}
+{% endblock %}
+
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img src="/static/cloud.gif"  height="40" width="170">
+    </div>
+	  
+	  
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+		<li><a href="/about">   </a></li>
+		<li><a href="/about">   </a></li>  
+        <li><a href="#"><span class="glyphicon glyphicon-globe"></span> Web Page(s)</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-th"></span> Web Apps</a></li> 
+		  
+		{% if request.session.active_type = request.session.active_admin %}
+		    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-link"></span> Administrator</a>
+		  		<ul class="dropdown-menu multi-level">
+
+                        <li class="dropdown-submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Users</a>
+                            <ul class="dropdown-menu">
+                                
+                                <li class="dropdown-submenu">
+                                    <li><a href="/admin_add_users">Add User</a></li> 
+                                </li>
+                                
+                                <li class="dropdown-submenu">
+                                    <li><a href="/display_users">Display Users</a></li>
+                                </li>								
+							</ul>
+                        </li>
+						<li class="dropdown-submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web Page</a>
+                            <ul class="dropdown-menu">
+                                
+                                <li class="dropdown-submenu">
+                                    <li><a href="/display_webpages">View Pages</a></li> 
+                                </li>
+                                <li class="dropdown-submenu">
+	  <li><a href="/admin_add_webpage">Add New Web Page</a></li>
+                                </li>	
+                                
+								<li class="dropdown-submenu">
+                                    <li><a href="#">Edit Web Page</a></li>
+                                </li>	
+	
+							</ul>
+                        </li>
+						<li class="dropdown-submenu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web Apps</a>
+                            <ul class="dropdown-menu">
+                                
+                                <li class="dropdown-submenu">
+                                    <li><a href="#">View/Edit Apps</a></li> 
+                                </li>
+                                
+                                <li class="dropdown-submenu">
+                                    <li><a href="#">Add App</a></li>
+                                </li>								
+							</ul>
+                        </li>
+                        
+                        <li class="divider"></li>
+                        <li><a href="#">View Administrator</a></li>
+					
+						
+                    </ul>
+			</li> 
+		{% endif %}  
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><font style="font-size: 100%;" face="Verdana" color=#FFFFFF>Welcome: {{request.session.active_user}}</font>
+			
+			
+          <br><font style="font-size: 80%;" face="Verdana" color=#FFFFFF>({{request.session.active_type}}) </font>
+		  
+		  </li>
+          <li><a href="">   </a></li><li><a href="">   </a></li>
+        <li><a href="http://www.wecloud.ca"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<font color=#000000 >
+{% block background %}
+<img alt="full screen background image" src="/static/nback_dash.jpg" id="full-screen-background-image"/>
+{% endblock %}
+
+<br><br>
+	
+
+<div class="container">
+
+{% block head1 %}
+{% endblock %}
+{% block content %}
+	<br><br><br>
+    <div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-6"></div>
+		
+		<div class="col-sm-2"></div>
+	</div>	
+{% endblock %}	
+</div>	
+
+
+	</font>
+</body>
+</html>

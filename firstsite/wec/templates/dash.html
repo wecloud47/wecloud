@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+
+    {% block style1 %}
+
+        .pos{position:absolute; top:15%; left:20%}
+
+    {% endblock %}
+
+{% block content %}
+    <div class="pos">
+        <div class="container">
+            <div class="col-sm-4" style="background-color: #000000; opacity: 0.6;border-radius: 15px;">   
+
+                    <table>
+                    <div class="form-group">
+                        <tr>
+                            <td align="center"><h2><font  style="font-size: 100%;" face="Verdana" color=#FFFFFF>{{ Msg }}</font></h2></td>
+                            
+                        </tr>
+                    </div>
+                    <div class="form-group">
+                        <tr>
+                            <td align="center"><font style="font-size: 100%;" face="Verdana" color=#FFFFFF>{{Msg2}}</font></td>
+                            
+                        </tr>
+                    </div>
+                        <tr>
+                            <td>  _</td>
+                        </tr>
+
+                    </table>
+ 
+            </div>
+        </div>
+</div>
+
+
+
+{% endblock %}

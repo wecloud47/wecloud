@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/assets/reset/normalize.css">
+<style>
+  * {box-sizing: border-box;}
+
+html, body {min-height: 100%;}
+
+
+#full-screen-background-image {z-index: -999;min-height: 100%; min-width: 1024px;width:200%;height: auto;position: fixed;left:0;margin-left:-50%;top: 0;  left: 0;}
+
+#wrapper {position: relative;width: 800px;min-height: 400px;top: 0px;  left: 50px;}
+
+a {text-decoration: none;}
+
+.main-header {
+  background: linear-gradient(#C7C7C7, #000000);
+  padding: 15px;
+  text-align: center;
+  color: white;
+  text-shadow: #222 0px -1px 1px;
+  position: fixed;
+  width: 100%;
+  left:0;
+  top:0;
+  transition: all 0.3s ease;
+
+}
+
+.main-header a {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  color: red;
+  font-size: 80px;
+}
+
+.page-wrap {
+  float: right;
+  width: 100%;
+  transition: width 0.3s ease;
+}
+
+.main-nav {
+  position: fixed;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #3B3B3B;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+}
+.main-nav a {
+  display: block;
+  background: linear-gradient(#3e3e3e, #383838);
+  border-top: 1px solid #484848;
+  border-bottom: 1px solid #2E2E2E;
+  color: white;
+  padding: 15px;
+}
+.main-nav a:hover, .main-nav a:focus {
+  background: linear-gradient(#484848, #383838);
+}
+.main-nav:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 34px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0,0, 0, 0.4));}
+
+.content {padding: 100px 20px 20px 20px;}
+
+.close-menu {display: none;}
+/* Width is how far out menu goes */
+#main-nav:target {width: 65%;}
+
+#main-nav:target + .page-wrap {width: 80%;}
+#main-nav:target + .page-wrap .open-menu {display: none;}
+#main-nav:target + .page-wrap .close-menu {display: block;}
+/* Left displays how far left menu folds when pressed */
+#main-nav:target + .page-wrap .main-header {width: 80%;left: 65.7%;}
+
+.header_bg{position:absolute;background-color: #000000;opacity: 0.6;filter:alpha(opacity=60); left:0; right:0; top:0; z-index:-40;bottom:0;}
+.header, .header h1{position:relative; z-index:999;}
+  </style>
+
+  <script>
+    window.console = window.console || function(t) {};
+    window.open = function(){ console.log('window.open is disabled.'); };
+    window.print = function(){ console.log('window.print is disabled.'); };
+    // Support hover state for mobile.
+    if (false) {
+      window.ontouchstart = function(){};
+    }
+  </script>
+
+    <script src="//assets.codepen.io/assets/libs/prefixfree.min-de773054e90c52a3c2631c944681b64e.js">"></script>
+
+</head>
+
+<body>
+
+
+<img alt="full screen background image" src="/media/nback.jpg" id="full-screen-background-image" />
+
+
+  <nav class="main-nav" id="main-nav"><font face="Palatino Linotype" color=#3F485B size="9">
+  <a href="#">Main</a>
+  <a href="#">About</a>
+  <a href="/thanks">Contact</a>
+  <a href="#">SignUp</a>
+  <a href="#">LogIn</a></font>
+</nav>
+
+<div class="page-wrap">
+
+  <header class="main-header">
+    <a href="#main-nav" class="open-menu">
+      <img src="/media/3line.gif" height="70px" width="100px"/>
+    </a>
+    <a href="#" class="close-menu">
+      <img src="/media/3line.gif" height="70px" width="100px"/>
+    </a>
+
+   <img src="/media/cloud.gif">
+  </header>
+
+  <div class="content">
+
+
+
+
+  </div>
+
+</div>
+
+  <script src='//assets.codepen.io/assets/libs/fullpage/jquery-c152c51c4dda93382a3ae51e8a5ea45d.js'></script>
+
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage('resize', "*");
+    }
+  </script>
+
+  <script src="//assets.codepen.io/assets/common/stopExecutionOnTimeout-6c99970ade81e43be51fa877be0f7600.js"></script>
+
+  <script>
+    /*
+
+CSS version of
+http://jpanelmenu.com/
+
+*/
+    //@ sourceURL=pen.js
+  </script>
+
+</body>
+
+</html>

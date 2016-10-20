@@ -1,0 +1,45 @@
+<html><body>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 3px;
+}
+</style>
+<table style="width:100%">
+<tr><th bgcolor="#C2C2D6">id</th><th bgcolor="#C2C2D6">name</th><th bgcolor="#C2C2D6">user</th><th bgcolor="#C2C2D6">type</th><th bgcolor="#C2C2D6">password</th><th bgcolor="#C2C2D6">passv</th>
+<th bgcolor="#C2C2D6">email</th>
+<th bgcolor="#C2C2D6">addr</th>
+<th bgcolor="#C2C2D6">city</th>
+<th bgcolor="#C2C2D6">country</th>
+<th bgcolor="#C2C2D6">code</th>
+<th bgcolor="#C2C2D6">phone</th>
+<th bgcolor="#C2C2D6">signup</th>
+<th bgcolor="#C2C2D6">status</th>
+<th bgcolor="#C2C2D6">db</th>
+    </tr>
+
+
+
+           {% for db in dad %}
+           <tr><td><center><a href="/members_db/get/{{ db.id }}/"> {{ db.id }}</a></center></td>
+           <td><center> {{ db.name }}</center></td>
+           <td><center> {{ db.user }}</center></td>
+           <td><center> {{ db.type }}</center></td>
+           <td><center>{{ db.password }}</center></td>
+           <td><center>{{ db.password_v }}</center></td>
+           <td><center> {{ db.email }}</center></td>
+           <td><center> {{ db.address }}</center></td>
+           <td><center> {{ db.city }}</center></td>
+           <td><center> {{ db.country }}</center></td>
+           <td><center> {{ db.code }}</center></td>
+           <td><center> {{ db.phone }}</center></td>
+
+           <td><center> {{ db.signup }}</center></td>
+           <td><center> {{ db.status }}</center></td>
+           <td><center> {{ db.DB }}</center></td></tr>
+           {% endfor %}
+</table>
+</body></html>

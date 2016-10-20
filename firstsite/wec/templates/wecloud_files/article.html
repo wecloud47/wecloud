@@ -1,0 +1,17 @@
+<html><body>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+</style>
+<table style="width:35%">
+<tr><th bgcolor="#C2C2D6">ID</th><th bgcolor="#C2C2D6">Article</th><th bgcolor="#C2C2D6">Date</th></tr>
+<tr><td><center>{{ article.title }}</a></center></td>
+<td><center>{{ article.body|lower|truncatewords:"10" }}</center></td>
+<td><center>{{ article.pub_date }}</center></td></tr>
+</table>
+</body></html>

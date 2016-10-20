@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+
+	
+ <!-- Format for Background image -->
+<style type="text/css">
+html, body {height: 100%;width: 100%;padding: 0;margin: 0;}
+#full-screen-background-image {z-index: -999;min-height: 110%; min-width: 100%;width: 100%;height: 110%;position: fixed;top: 0;  left: 0;}
+	.banner2_bg{position:absolute;background-color: #000000;opacity: 0.8;filter:alpha(opacity=80);width:auto; height:auto;z-index:-440;	border-radius: 25px;;}
+	{% block style1 %}
+.banner1_bg{position:absolute;background-color: #000000;opacity: 0.8;filter:alpha(opacity=80);width:auto; height:auto;z-index:-440;	border-radius: 25px;}
+	{% endblock %}
+	div.hd1 {position: absolute;top: 50%;}
+
+   .banner2_bg{position:absolute;background-color: #767c15;	border-radius: 25px;}	
+   
+</style>
+<!-- **************************** -->
+
+  <title>WEC Main Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/drop_down.css">
+  
+<!-- Extra style sheets to add in stylesheet block -->
+{% block stylesheet %}
+{% endblock %}
+	
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
+	</head>
+	
+
+
+<body>
+
+{% block refresh %}
+{% endblock %}
+
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img src="/static/cloud.gif"  height="40" width="170">
+    </div>
+	  
+	  
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+		<li><a href="/about">   </a></li>
+		<li><a href="/about">   </a></li>  
+		<li><a href="#"><span class="glyphicon glyphicon-cloud"></span> Home</a></li>
+		<li><a href="/kodi_install"><span class="glyphicon glyphicon-globe"></span> Kodi Install</a></li>
+        <li><a href="/kodi_addons"><span class="glyphicon glyphicon-globe"></span> Video AddOns (**NEW**)</a></li>
+        <li><a href="/kodi_live"><span class="glyphicon glyphicon-th"></span> Live TV (**NEW**)</a></li> 
+		<li><a href="/kodi_remote"><span class="glyphicon glyphicon-link"></span> Remote Control</a>
+	</ul>
+		
+      <ul class="nav navbar-nav navbar-right">
+        <li><font style="font-size: 100%;" face="Verdana" color=#FFFFFF>Welcome: {{request.session.active_user}}</font>
+			
+			
+          <br><font style="font-size: 80%;" face="Verdana" color=#FFFFFF>({{request.session.active_type}}) </font>
+		  
+		  </li>
+          <li><a href="">   </a></li><li><a href="">   </a></li>
+        <li><a href="http://www.wecloud.ca"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<font color=#000000 >
+{% block background %}
+<img alt="full screen background image" src="/static/nback_dash.jpg" id="full-screen-background-image"/>
+{% endblock %}
+
+<br><br>
+	
+
+<div class="container">
+{% block head1 %}
+	
+	<div class="jumbotron" style="background-color:#000000;opacity: 0.9;filter:alpha(opacity=90);border-radius: 45px;">
+        <center><font color="white" style="z-index: 9999;"><h1><b>XMBC Kodi</b></h1></font>
+        <font color="white" style="z-index: 9999;"><h3><i>Complete Help Guide to Kodi!</i></h3></font></center>
+    </div>
+{% endblock %}
+
+	
+{% block content %}
+	<br><br><br>
+    <div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8" style="border-style: ridge;border-width: 12px;border-color: #A4A4A4;z-index: -10;border-radius: 15px;">
+                <font color="black" style="z-index: 9999;"><center>
+                <h3><b>Help Guide</b></h3></center>
+                <p>You will find help guides to various questions such as how to get live TV, how to install popular add ons and 
+					how to take advantage of a great android app that completely controls your XBMC.  Above are the links to these
+					guides.   I will update this page as time goes on to help with future requests.  Enjoy.<br><br>
+					-Dave-</p>
+			</font>
+        </div>
+		
+		<div class="col-sm-2"></div>
+	</div>	
+{% endblock %}	
+</div>	
+
+
+	</font>
+</body>
+</html>

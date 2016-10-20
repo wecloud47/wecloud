@@ -1,0 +1,48 @@
+{% extends "dashboard_main.html" %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="/static/css/tableformat_1.css">
+
+<style type="text/css">
+		a.black:link {color: black;}
+		a.black:active {color: black;}
+		a.black:visited {color: black;}
+		a.black:hover {color: black;}
+</style>	
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+		<div class="col-sm-12">
+			<center><font face="Palatino Linotype" size="6"><u>Web Pages</u></font></center>
+			<br>
+		</div>
+		<div class="col-sm-12"></div>
+		<div class="col-sm-12"><center>
+			<table style="width:40%">
+			<tr><th bgcolor="#C2C2D6"><center>Edit Page</center></th>
+				<th bgcolor="#C2C2D6"><center>View Page</th>
+				<th bgcolor="#C2C2D6"><center>Delete Page</th>
+			</tr>
+				
+			{% for wp in Webpages %}	
+
+           <tr><td><center><a href="/web/{{ wp.0 }}/"  target="_blank" class="black"> {{ wp.0}}</a></center></td>
+           <td><center><a href="/home/{{ wp.0 }}/"  target="_blank" class="black"> {{ wp.0}}</a></center></td>
+			<td><center><a href="/admin_delete_webpage/get/{{ wp.0 }}/" class="black"> DELETE</a></center></td>
+           
+           
+	
+
+	               
+</tr>
+           {% endfor %}
+</table>
+		</center>
+	</div>
+		
+	</div>	
+
+
+{% endblock %}	

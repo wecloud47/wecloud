@@ -1,0 +1,27 @@
+
+<html>
+
+{% if form.errors %}
+Please correct the error{{ form.errors|pluralize }} below.
+	 {% endif %}
+	
+	
+	
+
+<form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+	<table>
+		{{ form.as_table }}
+	</table>
+	
+
+<input type="submit" value="Upload image" />
+</form>
+	<br><br>
+	Database is :{{request.session.active_db}}
+
+	</body>
+
+</html>
+
+
+

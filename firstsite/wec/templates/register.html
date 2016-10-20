@@ -1,0 +1,53 @@
+{% extends "main.html" %}
+
+    {% block style1 %}
+
+        .pos{position:absolute; top:15%; left:20%}
+
+    {% endblock %}
+
+{% block content %}
+
+        <div class="container">
+            <div class="col-sm-4" style="background-color: #000000; opacity: 0.6;border-radius: 15px;">   
+                <h2><center><font face="Verdana" color=#FFFFFF>Registration</font></center></h2>
+                <form action="" method="post" role="form">{% csrf_token %}
+                    <table>
+                    <div class="form-group">
+                        <tr>
+                            <td align="center"><font  style="font-size: 100%;" face="Verdana" color=#FFFFFF>Name</font></td>
+                            <td>{{form.name }}</td>
+                        </tr>
+                    </div>
+                    <div class="form-group">
+                        <tr>
+                            <td align="center"><font style="font-size: 100%;" face="Verdana" color=#FFFFFF>Company</font></td>
+                            <td>{{form.DB }}</td>
+                        </tr>
+                    </div>
+                    <div class="form-group">
+                        <tr>
+                            <td align="center"><font style="font-size: 100%;" face="Verdana" color=#FFFFFF>Email</font></td>
+                            <td>{{form.email}}</td>
+                        </tr>
+                    </div>
+                        <tr>
+                            <td>  _</td>
+                        </tr>
+                    <div class="form-group">
+                        <tr>
+                            <td align="right"><button type="submit" class="btn btn-default">Submit</button></td>
+                        </tr>
+                    </div>
+                    </table>
+                </form>
+            </div>
+        </div>
+
+                        
+         
+  
+    
+{% endblock %}
+
+

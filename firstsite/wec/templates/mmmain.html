@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+ <!-- Format for Background image -->
+<style type="text/css">
+html, body {height: 100%;width: 100%;padding: 0;margin: 0;}
+#full-screen-background-image {z-index: -999;min-height: 100%; min-width: 100%;width: 100%;height: auto;position: fixed;top: 0;  left: 0;}
+	.banner2_bg{position:absolute;background-color: #000000;opacity: 0.8;filter:alpha(opacity=80);width:auto; height:auto;z-index:-440;	border-radius: 25px;;}
+	{% block style1 %}
+.banner1_bg{position:absolute;background-color: #000000;opacity: 0.8;filter:alpha(opacity=80);width:auto; height:auto;z-index:-440;	border-radius: 25px;}
+	{% endblock %}
+	div.hd1 {position: absolute;top: 50%;}
+
+	
+</style>
+<!-- **************************** -->
+
+  <title>WeCloud</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	</head>
+<body>
+
+<img alt="full screen background image" src="/static/nback.jpg" id="full-screen-background-image" />
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <img src="/static/cloud.gif"  height="40" width="170">
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+
+        <li><a href="http://www.wecloud.ca">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Services</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<font color=#000000 >
+{% block content %}
+	
+<div class="container">
+
+    <div class="jumbotron" style="background-color:#000000;opacity: 0.6;filter:alpha(opacity=60);border-radius: 25px;">
+        <center><font color="white" style="z-index: 9999;"><h1><b>WeCloud</b></h1></font>
+        <font color="white" style="z-index: 9999;"><h3><i>Control your business !</i></h3></font></center>
+    </div>
+<br><br><br><br>
+
+    <div class="row">
+
+        <div class="col-sm-3" style="background-color: #000000;opacity: 0.6;filter:alpha(opacity=60);z-index: -10;border-radius: 15px;">
+                <font color="white" style="z-index: 9999;"><center>
+                <h3><b>Get It Rolling</b></h3></center>
+                <p>Utilize a custom website geared for your business.
+                Take advantage of specific domain name and email
+                registration focused on your business.</p>
+                </font>
+        </div>
+        <div class="col-sm-1">
+                <font color="white" style="z-index: 9999;"><center>
+                <h3><b></b></h3></center>
+                <p></p>
+                </font>
+        </div>
+        <div class="col-sm-3" style="background-color: #000000;opacity: 0.6;filter:alpha(opacity=60);border-radius: 15px;">
+                <font color="white" style="z-index: 9999;"><center>
+                <h3><b>Complete Control</b></h3></center>
+                <p>Add powerful web applications to your website giving you complete control
+                Use existing or custom made apps that suit your business needs.</p>
+                </font>
+        </div>
+        <div class="col-sm-1">
+                <font color="white" style="z-index: 9999;"><center>
+                <h3><b></b></h3></center>
+                <p></p>
+                </font>
+        </div>
+        <div class="col-sm-3" style="background-color: #000000;opacity: 0.6;filter:alpha(opacity=60);border-radius: 15px;">
+                <font color="white"><center>
+                <h3><b>Try It</b></h3></center>
+                <p>Take full advantage of our risk free start up.  Register completely free
+                and check out our services for one month free with no obligations.</p>
+                </font>
+        </div>
+    </div>
+</div>
+
+{% endblock %}	
+	</font>
+</body>
+</html>

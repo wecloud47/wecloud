@@ -1,0 +1,19 @@
+<html><body>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 3px;
+}
+</style>
+<table style="width:35%">
+<tr><th bgcolor="#C2C2D6">ID</th><th bgcolor="#C2C2D6">Article</th></tr>
+
+           {% for article in articles %}
+           <tr><td><center><a href="/articles/get/{{ article.id }}/"> {{ article.title }}</a></center></td>
+           <td><center>{{ article.body|lower|truncatewords:"10" }}</center></td></tr>
+           {% endfor %}
+</table>
+</body></html>

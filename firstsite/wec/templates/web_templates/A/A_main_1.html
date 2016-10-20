@@ -1,0 +1,25 @@
+{% extends "web_templates/A/A_main.html" %}
+
+{% block content %}
+	
+<div class="container">
+<br><br>
+    <div class="row">
+		<div class="col-sm-2"></div>
+		<!-- Use variable 'lines' below to determine height of the box -->
+        <div class="col-sm-8" style="height:{{lines}}px;margin-left:22px;background-color: #000000;opacity: 0.6;filter:alpha(opacity=60);z-index: -10;border-radius: 15px;">
+                <font color="white" style="z-index: 9999;"><center><br>
+                <h2><b>{{list.13.1}}</b></h2></center><br><br>
+                <p>Lines:{{lines}}<br>{{list.7.1}}
+                
+                </p>
+			</font>
+        </div>
+        <div class="col-sm-2"></div>
+    </div> 
+</div>
+
+<br><br><br><br><br><br>
+
+{% endblock %}	
+
