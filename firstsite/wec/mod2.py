@@ -65,16 +65,16 @@ def copy_directory(to_Directory,from_Template):
 
 def path_local():
 
-	path_local = 'static/wec/'  # Uncomment for server
+#	path_local = 'static/wec/'  # Uncomment for server
 
-#	path_local = 'firstsite/wec/static/wec/'   # Uncomment for local
+	path_local = 'firstsite/wec/static/wec/'   # Uncomment for local
 	
 	return path_local
 	
 def path_local2():
 	
-	path_local = r'static/wec/'  # Uncomment for Server
-#	path_local = r'firstsite/wec/static/wec/'  # Uncomment for local
+#	path_local = r'static/wec/'  # Uncomment for Server
+	path_local = r'firstsite/wec/static/wec/'  # Uncomment for local
 	return path_local
 	
 	
