@@ -21,6 +21,8 @@ from firstsite.wec.views_kodi import kodi_live, kodi_main, kodi_addons, kodi_ins
 # *******  MODS ***********
 from firstsite.wec.mod2 import create_directory, copy_directory, dir_test
 from firstsite.wec.mod3 import repair_database, page_set, alter_database
+from firstsite.wec.views_db_modifications import create_column, delete_column
+
 
 from firstsite.wec.we_scheduler import matrix, mainadd, maindel, matrice, imain, db, main_new
 #from firstsite.wec.db1 import member
@@ -121,6 +123,8 @@ urlpatterns = [
 		url(r'^repair_database/',repair_database),
 		url(r'^page_set/',page_set),
 		url(r'^alter_database/',alter_database),
+		url(r'^create_column/',create_column),
+		url(r'^delete_column/',delete_column),
 
 # *********************************************************************    
  
