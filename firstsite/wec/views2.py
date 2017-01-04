@@ -199,13 +199,13 @@ def login(request):
             pwd = form.cleaned_data['password']
             #form.save()
             if Members.objects.filter(DB = db).filter(user = user).filter(password = pwd).count()<>1:
-                return render(request,'/dashboard_fail.html')
+                return render(request,'dashboard_fail.html')
             else:
                 m = Members.objects.get(user = user, DB = db)
                 if m.type == 'admin':
                     tp = "Administrator"
                 else:
-                    tp = 'User'
+                    tp = "User"
                 if user == 'kodi':
                     request.session["active_type"] = "Guest"
                     request.session["active_user"] = user

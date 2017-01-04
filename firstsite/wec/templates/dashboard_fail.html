@@ -1,4 +1,4 @@
-{% extends "pmain.html" %}
+{% extends "main.html" %}
 <html>
 <head>
 <style>
@@ -12,13 +12,14 @@
 </head>
 
 {% block content %}
-<div class="pos"><br><center>
+<div class="col-sm-3" style="background-color: #000000;opacity: 0.6;filter:alpha(opacity=60);z-index: -10;border-radius: 15px;">
 </b><font style="font-size: {{request.session.active_fh}}%;" face="Verdana" color=#FFFFFF ><u>ERROR !</u></b><br><br>
 <font style="font-size: {{request.session.active_f}}%;" face="Verdana" color=#FFFFFF >
 Incorrect password or LogIn <br>
 Please contact us if you are in need of assistance.</font>
 </div>
 {% endblock %}
+
 
 
 </html>

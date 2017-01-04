@@ -63,63 +63,63 @@ html, body {height: 100%;width: 100%;padding: 0;margin: 0;}
       <ul class="nav navbar-nav">
 		<li><a href="/about">   </a></li>
 		<li><a href="/about">   </a></li>  
-        <li><a href="#"><span class="glyphicon glyphicon-globe"></span> Web Page(s)</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-th"></span> Web Apps</a></li> 
-		  
-		{% if request.session.active_type = request.session.active_admin %}
-		    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-link"></span> Administrator</a>
-		  		<ul class="dropdown-menu multi-level">
+		
+		<!-- *************************************************************************  -->
+		<!-- ****       Loop Menu Items based on Apps  *******************************  -->
+		<!-- *************************************************************************  -->
+		
+		
+		
+		<!-- Old Section that uses manual menu entries 
+			<li><a href="#"><span class="glyphicon glyphicon-globe"></span> Web Page(s)</a></li>
+			<li><a href="#"><span class="glyphicon glyphicon-th"></span> Web Apps</a></li> 
+		-->
 
-                        <li class="dropdown-submenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Users</a>
-                            <ul class="dropdown-menu">
-                                
-                                <li class="dropdown-submenu">
-                                    <li><a href="/admin_add_users">Add User</a></li> 
-                                </li>
-                                
-                                <li class="dropdown-submenu">
-                                    <li><a href="/display_users">Display Users</a></li>
-                                </li>								
-							</ul>
-                        </li>
-						<li class="dropdown-submenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web Page</a>
-                            <ul class="dropdown-menu">
-                                
-                                <li class="dropdown-submenu">
-                                    <li><a href="/display_webpages">View Pages</a></li> 
-                                </li>
-                                <li class="dropdown-submenu">
-	  <li><a href="/admin_add_webpage">Add New Web Page</a></li>
-                                </li>	
-                                
-								<li class="dropdown-submenu">
-                                    <li><a href="#">Edit Web Page</a></li>
-                                </li>	
+		{% if request.session.active_type = request.session.active_admin %}  <!-- Determine if Administrator -->
+<!-- ************************************************************************* -->
+<!-- ****     Administrator Section  ***************************************** -->
+<!-- ************************************************************************* -->
+			<li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-link"></span> Administrator</a>
+				<ul class="dropdown-menu multi-level">
+					<li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Users</a>
+						<ul class="dropdown-menu">
+							<li class="dropdown-submenu">
+								<li><a href="/admin_add_users">Add User</a></li> 
+							</li>
+							<li class="dropdown-submenu">
+								<li><a href="/display_users">Display Users</a></li>
+							</li>
+						</ul>
+					</li>
+					<li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Web Page</a>
+						<ul class="dropdown-menu">
+							<li class="dropdown-submenu">
+								<li><a href="/display_webpages">View/Edit Pages</a></li> 
+							</li>
+							<li class="dropdown-submenu">
+								<li><a href="/admin_add_webpage">Add New Page</a></li>
+							</li>	
 	
-							</ul>
-                        </li>
-						<li class="dropdown-submenu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Web Apps</a>
-                            <ul class="dropdown-menu">
-                                
-                                <li class="dropdown-submenu">
-                                    <li><a href="#">View/Edit Apps</a></li> 
-                                </li>
-                                
-                                <li class="dropdown-submenu">
-                                    <li><a href="#">Add App</a></li>
-                                </li>								
-							</ul>
-                        </li>
-                        
-                        <li class="divider"></li>
-                        <li><a href="#">View Administrator</a></li>
-					
-						
-                    </ul>
+						</ul>
+					</li>
+					<li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Web Apps</a>
+						<ul class="dropdown-menu">
+							<li class="dropdown-submenu">
+								<li><a href="#">View/Edit Apps</a></li> 
+							</li>
+							<li class="dropdown-submenu">
+								<li><a href="#">Add App</a></li>
+							</li>								
+						</ul>
+					</li>
+
+					<li class="divider"></li>
+						<li><a href="#">View Administrator</a></li>
+\				</ul>
 			</li> 
+<!-- ************************************************************************* -->
+<!-- ****     End of Administrator Section  ********************************** -->
+<!-- ************************************************************************* -->
 		{% endif %}  
         
       </ul>
@@ -131,7 +131,7 @@ html, body {height: 100%;width: 100%;padding: 0;margin: 0;}
 		  
 		  </li>
           <li><a href="">   </a></li><li><a href="">   </a></li>
-        <li><a href="http://www.wecloud.ca"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        <li><a href="/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>
   </div>

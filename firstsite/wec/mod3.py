@@ -8,7 +8,8 @@ from firstsite.wec.views_db import db_open
 def alter_database(request):
     page_set(request)
     return
-    
+
+
     
 # ***********************************************************************************
 # Create a WebTable Quickly.    Just Modify Name and column                         *
