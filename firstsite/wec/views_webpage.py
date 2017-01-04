@@ -26,7 +26,7 @@ def eup(x):
 		global st, nt, mt, ut, lt, ht
 		# template
 		mt.append(str(x[3]))
-		# link
+		# info
 		nt.append(str(x[4]))
 		# webpage
 		ut.append(str(x[2]))
@@ -85,10 +85,10 @@ def home(request,addy):
 	tmp = cursor.fetchall()
 	tmp2 = tmp[0]
 	global  mt, nt, ut, it, lt, ht
-	nt = []
-	mt = []
-	ut = []
-	it = []
+	nt = [] # info (description or label of link)
+	mt = [] # template
+	ut = [] # webpage
+	it = [] # id
 	lt = [] # variable for type (which could be a link or empty)
 	ht = [] # variable for hook
 	[eup(x) for x in tmp]
