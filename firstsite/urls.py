@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls import include, url
 from firstsite.wec.ipic import image_setup, image_write
 from firstsite.wec.views_test import modal_form, testing
-from firstsite.wec.views import main, login_error, dashboard, pmain, mmain, test, fill, graph, done,test3
+from firstsite.wec.views import main, login_error, dashboard, pmain, mmain, test, fill, graph, done,test3, blog, blog_4
 from firstsite.wec.views2 import thanks, login, register, members_db, membersdel, emailtest, services, about, contact
 from firstsite.wec.views2 import registration, fade,pc,mobile, ssize, members_features,picture
 from firstsite.wec.views_webpage import web, web_edit,page_delete,done_page_edit,web_page_reload,web_edit2,home,web_link
@@ -31,7 +31,8 @@ admin.autodiscover()
 
 urlpatterns = [
         url(r'^$', main),
-		 
+        url(r'^blog/',blog), 
+		url(r'^blog_4/',blog_4), 
 		url(r'^dir_test/',dir_test), 
 		url(r'^testlink/',testlink),
 		# ****************Web Page Design URL PATTERNS **** ***** * ************
