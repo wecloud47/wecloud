@@ -62,7 +62,7 @@ class MembersUpdate(UpdateView):
 
 # *************MAIN CDS PAGE************************
 def main(request):
-	return render(request, 'main_temp.html')
+	return render(request, 'main.html')
 
 
 # Blog Main Site

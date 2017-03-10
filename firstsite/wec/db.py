@@ -13,7 +13,7 @@ import MySQLdb
 
 # Method for opening database for all and returning db and cur
 def db_open():
-    db = MySQLdb.connect(host="localhost",user="weclouduser",passwd="benny6868",db='wecloud')
+    db = MySQLdb.connect(host="localhost",user="root",passwd="benny6868",db='wecloud')
     cur = db.cursor()
     return db, cur
 

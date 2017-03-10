@@ -88,7 +88,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
 		'NAME': 'wecloud',
-		'USER': 'weclouduser',
+		'USER': 'root',
 		'PASSWORD': 'benny6868',
 		'HOST': 'localhost',
 		'PORT': '',

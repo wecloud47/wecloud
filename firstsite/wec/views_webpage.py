@@ -15,6 +15,7 @@ from django.views.generic.edit import UpdateView
 from django.core.context_processors import csrf
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
+import time
 
 from PIL import Image
 
@@ -120,7 +121,9 @@ def home(request,addy):
 	
 	request.session["web_addy"] = template
 	
-	return render(request, template, {'list':list, 'Tmp2':tmp2,'lines':l})
+	tcur=int(time.time())
+	
+	return render(request, template, {'list':list, 'Tmp2':tmp2,'lines':l,'TCUR':tcur})
 
 def web_link(request):
 	request.session["active_link"] = 1
@@ -259,7 +262,10 @@ def web(request,addy):
 	args.update(csrf(request))
 	args['form'] = form
 #	return render(request,'done2.html', {'template':list2})
-	return render(request, template, {'list':list,'list2':list2, 'Tmp2':tmp2,'args':args})
+
+	tcur=int(time.time())
+	
+	return render(request, template, {'list':list,'list2':list2, 'Tmp2':tmp2,'TCUR':tcur,'args':args})
 	# ***********************************************************************************************************************	
 	
 	
