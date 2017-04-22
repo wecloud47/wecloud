@@ -215,7 +215,7 @@ def web(request,addy):
 #			db = request.session["active_db"]
 			web_site = request.session["addy"]
 			im = Image.open(request.FILES['image'])
-			width, height = im.size			
+			width, height = im.size
 			save_file2(request,request.FILES['image'], web_site)
 
 			
