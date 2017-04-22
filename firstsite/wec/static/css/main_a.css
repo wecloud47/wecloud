@@ -1,0 +1,38 @@
+html, body {height: 100%;width: 100%;padding: 0;margin: 0;}
+#full-screen-background-image {z-index: -999;min-height: 110%; min-width: 100%;width: 100%;height: 110%;position: fixed;top: 0;  left: 0;}
+#range-logo {z-index: -999;min-height: 110%; min-width: 100%;width: 100%;height: 110%;position: fixed;top: 0;  left: 0;}
+	.banner2_bg{position:absolute;background-color: #000000;opacity: 0.8;filter:alpha(opacity=80);width:auto; height:auto;z-index:-440;	border-radius: 0px;;}
+	{% block style1 %}
+.banner1_bg{position:absolute;background-color: #000000;opacity: 0.8;filter:alpha(opacity=80);width:auto; height:auto;z-index:-440;	border-radius: 0px;}
+	{% endblock %}
+	div.hd1 {position: absolute;top: 50%;}
+
+
+/* Below is proper CSS for Sticky footer */
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -60px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 60px; 
+}
+.site-footer {
+  background-color: #000000;
+}
+
+
+/* Not required for template or sticky footer method. */
+
+.container {
+  width: auto;
+  max-width: 80%;
+  padding: 0 15px;
+}
+.container .credit {
+  margin: 20px 0;
+}
