@@ -39,7 +39,7 @@ urlpatterns = [
 		url(r'^web/(?P<addy>\w{0,50})',web),
 		url(r'^home/(?P<addy>\w{0,50})',home_initial),
 		url(r'^home_link/(?P<hook>\w{0,50})',home_link),
-		
+		url(r'^web_link/(?P<hook>\w{0,50})',web_link),
         
         		
         url(r'^web_template_initialize/',web_template_initialize),
@@ -48,7 +48,7 @@ urlpatterns = [
         url(r'^web_edit2/',web_edit2),
         url(r'^page_delete/',page_delete),
         
-        url(r'^web_link/',web_link),
+
 		#url(r'^page_initialize/',page_initialize),
 		
 		# ************************************************************

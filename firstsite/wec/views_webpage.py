@@ -125,11 +125,16 @@ def home(request,addy):
 	
 	return render(request, template, {'list':list, 'Tmp2':tmp2,'lines':l,'TCUR':tcur})
 
-def web_link(request):
-	request.session["active_link"] = 1
+	
+def web_link(request,hook):
+	# take in hook(hook_call) # from A_home.html and call up webpages_manager
+	# and choose type where hook = hook_call , and webpage = request.session["addy"]
+	# then 
+	request.session["active_link"] = hook
 	addy = request.session["addy"]
-	return home(request,addy)
+	return web(request,addy)
 	#return render(request, 'web_templates/A/A_1.html')
+	
 	
 # ***********************************************************************************
 # Select db filtered with information from the required website only and redirect to*
