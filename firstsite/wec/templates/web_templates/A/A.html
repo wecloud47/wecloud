@@ -43,7 +43,8 @@
     {% include "div_classes/page1_6_edit.html" %}
    {% include "div_classes/page1_7_edit.html" %}
     {% include "div_classes/page1_8_edit.html" %} 
-    {% include "div_classes/page1_9_edit.html" %}  <!-- ********************** -->
+    {% include "div_classes/page1_9_edit.html" %}
+    {% include "div_classes/page2_1_edit.html" %}   <!-- ********************** -->
   <!-- ***************************************************** -->
 
 
@@ -68,7 +69,7 @@
 	  <img src="/static/wec/wec_company/{{request.session.active_website}}/logoA.jpg"  height="40" width="170">
 	  </a>
 	  -->
-	  <a href="#ModalForm5" role="button" class="button button1" data-toggle="modal">
+	  <a href="#image1_edit" role="button" class="button button1" data-toggle="modal">
 	  <img src="/static/wec/wec_company/{{request.session.active_website}}/logoA.jpg?{{TCUR}}" alt=""  width="{{request.session.width}}" height="40">
 	  </a>
 	  <!--
@@ -108,6 +109,7 @@
 <!-- Use Page-wrap from CSS main_a.css to utilize sticky footer -->
 <div class="page-wrap">
   <div class="container">
+	  
 <a href="#ModalForm6" role="button" class="button button1" data-toggle="modal">Edit Background</a>
 
     <div class="jumbotron" style="background-color:#000000;opacity: 0.6;filter:alpha(opacity=60);border-radius: 25px;">

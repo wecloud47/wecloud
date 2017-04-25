@@ -8,7 +8,7 @@ from firstsite.wec.views import main, login_error, dashboard, pmain, mmain, test
 from firstsite.wec.views2 import thanks, login, register, members_db, membersdel, emailtest, services, about, contact
 from firstsite.wec.views2 import registration, fade,pc,mobile, ssize, members_features,picture
 from firstsite.wec.views_webpage import web, web_edit,page_delete,done_page_edit,web_page_reload,web_edit2,home,web_link
-from firstsite.wec.views_webpage import web_template_initialize, home_link,home_initial
+from firstsite.wec.views_webpage import web_template_initialize, home_link,home_initial,web_initial
 from firstsite.wec.views_website import image_update
 
 # *******  Uploading pictures **************
@@ -36,7 +36,7 @@ urlpatterns = [
 		url(r'^dir_test/',dir_test), 
 		url(r'^testlink/',testlink),
 		# ****************Web Page Design URL PATTERNS **** ***** * ************
-		url(r'^web/(?P<addy>\w{0,50})',web),
+		url(r'^web/(?P<addy>\w{0,50})',web_initial),
 		url(r'^home/(?P<addy>\w{0,50})',home_initial),
 		url(r'^home_link/(?P<hook>\w{0,50})',home_link),
 		url(r'^web_link/(?P<hook>\w{0,50})',web_link),

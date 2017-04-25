@@ -135,6 +135,9 @@ def web_link(request,hook):
 	return web(request,addy)
 	#return render(request, 'web_templates/A/A_1.html')
 	
+def web_initial(request,addy):
+	request.session["active_link"] = 0
+	return web(request,addy)
 	
 # ***********************************************************************************
 # Select db filtered with information from the required website only and redirect to*
@@ -142,8 +145,13 @@ def web_link(request,hook):
 #                                                                                   *
 # ***********************************************************************************
 def web(request,addy):
+	try:
+		request.session["active_link"]
+	except:
+		request.session["active_link"] = 0
 	tmp = addy
-	
+	active_link = int(request.session["active_link"])
+			
 	request.session["addy"] = addy
 	if request.session["active_type"] != 'Administrator':
 		return home(request,addy)
@@ -161,7 +169,12 @@ def web(request,addy):
 	lt = []
 	ht = []
 	[eup(x) for x in tmp]
-	template = "web_templates/"+ max(mt) + "/"+ max(mt)+".html"
+	
+	if active_link != 0:
+		template = "web_templates/"+max(mt)+"/"+max(mt)+"_"+str(active_link)+".html"
+	else:
+		template = "web_templates/"+max(mt)+"/"+max(mt)+".html"
+		
 	active_website = max(ut)
 		# Assign each nt value (link_number) as array number to info
 		# 
@@ -235,6 +248,7 @@ def web(request,addy):
 			id1 = tmp.get("id1")
 			request.session["link"] = edit1 
 			request.session["id"] = id1
+			
 				
 		else:	
 			tmp = request.POST
@@ -281,6 +295,8 @@ def web(request,addy):
 def done_page_edit(request):
 	# update webpages_manager where webpage = request.session.addy and lin1 name = request.session.link1
 	# Use try because link and id rv may be empty if we are only updating a picture first
+	
+	
 	try:
 		ide = request.session["id"]
 		link = request.session["link"]
@@ -292,6 +308,9 @@ def done_page_edit(request):
 		db.close
 	except:
 		dumb = 1	
+	
+
+	
 	return render(request,'done_page_edit.html')
 		
 		
