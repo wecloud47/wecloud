@@ -35,10 +35,10 @@ def create_directory(dpath):
 
 def delete_directory(dpath):
 
-# ....npath = r'static/' + dpath
+    #npath = r'firstsite/' + dpath
+    #npath = r+dpath
 
-
-#    npath = r + dpath
+    npath = dpath
     try:
         shutil.rmtree(npath)
     except:

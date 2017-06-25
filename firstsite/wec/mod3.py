@@ -41,7 +41,7 @@ def page_set(request,template):
 	cursor.execute("DELETE FROM WC_Templates WHERE template = '%s'" % (template))
 	db.commit()
 	link_number = 1
-	rn = 15
+	rn = 21
 	info = ["" for x in range(rn)]
 	info[0] = "Link 1"
 	info[1] = "Link 2"
@@ -58,7 +58,13 @@ def page_set(request,template):
 	info[12] = "Enter Footer Information Here...."
 	info[13] = "Link 1 Information"
 	info[14] = "Link 1 Summary:  In this section you will write a detailed summary of what information you want to hold in this link.  It can be up to 256 characters."
-	
+	info[15] = "Link 2 Information"
+	info[16] = "Link 2 Summary:  In this section you will write a detailed summary of what information you want to hold in this link.  It can be up to 256 characters."
+	info[17] = "Link 3 Information"
+	info[18] = "Link 3 Summary:  In this section you will write a detailed summary of what information you want to hold in this link.  It can be up to 256 characters."
+	info[19] = "Link 4 Information"
+	info[20] = "Link 4 Summary:  In this section you will write a detailed summary of what information you want to hold in this link.  It can be up to 256 characters."	
+		
 	
 	info_note = ["" for x in range(rn)]
 	info_note[0] = "_1.html"
@@ -76,6 +82,12 @@ def page_set(request,template):
 	info_note[12] = ""
 	info_note[13] = ""
 	info_note[14] = ""
+	info_note[15] = ""
+	info_note[16] = ""
+	info_note[17] = ""
+	info_note[18] = ""
+	info_note[19] = ""
+	info_note[20] = ""
 	
 	hook = ["" for x in range(rn)]
 	for y in range(0,rn):

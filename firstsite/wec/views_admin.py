@@ -125,6 +125,14 @@ def admin_add_webpage(request):
 	return render(request,'admin_add_webpage.html', args)	
 
 def admin_delete_webpage(request,web):
+	
+	# Below to stop mid program and view variables
+	#test1_v = 'Web Address : '
+	#path1 = path_local()
+	#test2_v = 'Full Path is :'
+	#path1 = path_local() + 'wec_company/' + web
+	#return render(request,'mid_stop_info_1.html',{'test1':web,'test1_v':test1_v,'test2':path1,'test2_v':test2_v})
+	
 	db, cursor = db_open()
 	try:
 		cursor.execute("DELETE FROM webpages_manager WHERE webpage = '%s'" % (web))
@@ -133,7 +141,7 @@ def admin_delete_webpage(request,web):
 		dum = 0	
 	db.close()
 	# Below we add delete code for directory and pictures.
-	dpath = path_local() + 'wec_company/' + web
+	dpath = path_local2() + 'wec_company/' + web
 	delete_directory(dpath)
 	#                                                     
 	#return render(request,'done.html')
