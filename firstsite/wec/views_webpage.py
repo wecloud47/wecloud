@@ -237,9 +237,9 @@ def web(request,addy):
 			save_file2(request,request.FILES['image'], web_site)
 
 			
-			ratio = width / float(height)
-			multiplier = 40 * ratio
-			request.session["width"] = multiplier
+			#ratio = width / float(height)
+			#multiplier = 40 * ratio
+			#request.session["width"] = multiplier
 			return done_page_edit(request)
 			
 		elif ftype == "page":

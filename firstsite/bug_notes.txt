@@ -1,0 +1,11 @@
+BUG NOTES
+-----------
+
+
+7/30/2017	-	created logo width problem
+					-> logo width is set with request.session['width']
+					   which is set when the logo is uploaded.   The bug occurs because
+					   if you have multiple pages to view it only looks at the last session variable ['width']
+					   LOCATION:  views_webpage.py  line :221   def web(request,addy):
+						   
+
