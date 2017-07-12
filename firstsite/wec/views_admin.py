@@ -196,5 +196,6 @@ def page_initialize(request):
 def testlink(request):
 	return render(request, 'web_templates/A/A_1.html')
 
-
+def webpage_test_1(request):
+	return render(request, 'page_test/index.html')
 

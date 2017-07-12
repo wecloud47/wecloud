@@ -14,7 +14,7 @@ from firstsite.wec.views_website import image_update
 # *******  Uploading pictures **************
 from firstsite.wec.views_picture import image_upload
 from firstsite.wec.views_admin import admin_add_users, display_users, display_webpages, admin_add_webpage, admin_debug
-from firstsite.wec.views_admin import admin_delete_webpage,testlink
+from firstsite.wec.views_admin import admin_delete_webpage,testlink,webpage_test_1
 from firstsite.wec.views_test import create_table,poptest, pop_link,test2
 from firstsite.wec.views_kodi import kodi_live, kodi_main, kodi_addons, kodi_install, create_koditable, kodi_remote
 
@@ -128,6 +128,12 @@ urlpatterns = [
 		url(r'^delete_column/',delete_column),
 		url(r'^change_column/',change_column),
 		url(r'^change_column2/',change_column2),
+
+# *********************************************************************    
+
+# ************ Testing *************************************   
+		url(r'^webpage_test_1/',webpage_test_1),
+
 
 # *********************************************************************    
  
