@@ -3,7 +3,7 @@
 from django.conf import settings
 from django.conf.urls import include, url
 from firstsite.wec.ipic import image_setup, image_write
-from firstsite.wec.views_test import modal_form, testing
+from firstsite.wec.views_test import modal_form, testing,ptest1
 from firstsite.wec.views import main, login_error, dashboard, pmain, mmain, test, fill, graph, done,test3, blog, blog_4
 from firstsite.wec.views2 import thanks, login, register, members_db, membersdel, emailtest, services, about, contact
 from firstsite.wec.views2 import registration, fade,pc,mobile, ssize, members_features,picture
@@ -133,7 +133,7 @@ urlpatterns = [
 
 # ************ Testing *************************************   
 		url(r'^webpage_test_1/',webpage_test_1),
-
+		url(r'^ptest1/',ptest1),
 
 # *********************************************************************    
  

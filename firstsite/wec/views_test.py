@@ -8,6 +8,9 @@ import imghdr
 
 def modal_form(request):
     return render(request,'modal_form_test.html')
+    
+def ptest1(request):
+    return render(request,'test1/test1.html')    
 
 
 
