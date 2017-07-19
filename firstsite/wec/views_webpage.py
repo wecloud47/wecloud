@@ -63,6 +63,10 @@ def home_link(request,hook):
 	# then 
 	request.session["active_link"] = hook
 	addy = request.session["addy"]
+	
+	# kill line below
+	#return kill_It(request,addy)
+	
 	return home(request,addy)
 	#return render(request, 'web_templates/A/A_1.html')
 	
