@@ -86,7 +86,7 @@ def admin_add_users(request):
 
 # Method to produce form and add generate and initialize new webpage
 def admin_add_webpage(request):	
-	request.session["testt"] = '<img src="/static/template_1.jpg"  height="160" width="300">'
+	#request.session["testt"] = '<img src="/static/template_1.jpg"  height="160" width="300">'
 	if request.POST:
         
         # utilize the database request variable 'active_db' 

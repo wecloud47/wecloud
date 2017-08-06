@@ -36,20 +36,29 @@ def repair_database(request):
 # Testing Module to add information to various Tables on call                       *
 # The Call is            page_set                                                   *
 # ***********************************************************************************
-def page_set(request,template):
+def page_set(request):
+	# make above line page_set(request,template) if you're utilizing repair database.
+	# repair database changes, deletes or adds columns if you want to expand WC_Templates
+	
+	# make above line page_set(request): if you want to change values or add rows to a certain 
+	# template.   You must specify template in line with template = 'X'
+	
+	# Use below line to specify template being modified. Comment out if not using it
+	template = 'B'
+	
 	db, cursor = db_open()
 	cursor.execute("DELETE FROM WC_Templates WHERE template = '%s'" % (template))
 	db.commit()
 	link_number = 1
 	rn = 21
 	info = ["" for x in range(rn)]
-	info[0] = "Link 1"
-	info[1] = "Link 2"
-	info[2] = "Link 3"
+	info[0] = "About"
+	info[1] = "Blog"
+	info[2] = "Contact"
 	info[3] = "Link 4"
-	info[4] = "Company Name"
-	info[5] = "Company Montra"
-	info[6] = "First slogan"
+	info[4] = "Casual Business"
+	info[5] = "1234 SOMEWHERE PL  |  ENGLEWOOD, CA 90132  |  123.456.7890"
+	info[6] = "A CASUAL APPROACH TO BUSINESS"
 	info[7] = "In this section you enter a brief description of your first slogan that generalizes it's message."
 	info[8] = "Second Slogan"
 	info[9] = "In this section you enter a brief description of your second slogan that generalizes it's message."
@@ -97,7 +106,12 @@ def page_set(request,template):
 		cursor.execute('''INSERT INTO WC_Templates(template,info,type,hook) VALUES(%s, %s, %s, %s)''', (template,info[x],info_note[x], hook[x]))
 		db.commit()
 	db.close()
-	return
+	
+	# Use below line if page_set is being used directly to alter one specific template
+	return render(request, 'done2.html')
+	
+	# Use below line if page_set is being used indirectly to alter WC_Template structure
+	#return
 		
     
 

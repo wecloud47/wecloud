@@ -42,8 +42,8 @@
 	
   <img alt="full screen background image" src="/static/wec/wec_company/{{request.session.active_website}}/backB.jpg?{{TCUR}}" alt="" id="full-screen-background-image" />
 
-    <div class="brand">Business Casual</div>
-    <div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>
+    <div class="brand">{{list.4.1}}</div>
+    <div class="address-bar">{{list.5.1}}</div>
 
     <!-- Navigation -->
     <nav class="navbar navbar-default" role="navigation">
@@ -57,22 +57,22 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="https://blackrockdigital.github.io/startbootstrap-business-casual/index.html">Business Casual</a>
+                <a class="navbar-brand" href="/home/{{request.session.addy}}">{{list.4.1}}</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="https://blackrockdigital.github.io/startbootstrap-business-casual/index.html">Home</a>
+                        <a href="/home/{{request.session.addy}}">Home</a>
                     </li>
                     <li>
                         <a href="/home_link/{{list.0.4}}">{{list.0.1}}</a>
                     </li>
                     <li>
-                        <a href="https://blackrockdigital.github.io/startbootstrap-business-casual/blog.html">Blog</a>
+                        <a href="/home_link/{{list.1.4}}">{{list.1.1}}</a>
                     </li>
                     <li>
-                        <a href="https://blackrockdigital.github.io/startbootstrap-business-casual/contact.html">Contact</a>
+                        <a href="/home_link/{{list.2.4}}">{{list.2.1}}</a>
                     </li>
                 </ul>
             </div>
@@ -118,11 +118,11 @@
                     <h2 class="brand-before">
                         <small>Welcome to</small>
                     </h2>
-                    <h1 class="brand-name">Business Casual</h1>
+                    <h1 class="brand-name">{{list.4.1}}</h1>
                     <hr class="tagline-divider">
                     <h2>
-                        <small>By
-                            <strong>Start Bootstrap</strong>
+                        <small>
+                            <strong>{{list.6.1}}</strong>
                         </small>
                     </h2>
                 </div>
