@@ -44,6 +44,9 @@ def page_set(request):
 	# template.   You must specify template in line with template = 'X'
 	
 	# Use below line to specify template being modified. Comment out if not using it
+	
+	
+	# Currently Updates B Default Template
 	template = 'B'
 	
 	db, cursor = db_open()
