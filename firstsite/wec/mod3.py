@@ -53,7 +53,7 @@ def page_set(request):
 	cursor.execute("DELETE FROM WC_Templates WHERE template = '%s'" % (template))
 	db.commit()
 	link_number = 1
-	rn = 21
+	rn = 24
 	info = ["" for x in range(rn)]
 	info[0] = "About"
 	info[1] = "Blog"
@@ -71,11 +71,14 @@ def page_set(request):
 	info[13] = "Use this box to further explain or summarize your business.  You can go into a little more detail or possible explain other features of your company.  It's a great tool to use as a secondary form of information."
 	info[14] = "You can even add a second paragraph here as well.  It's amazing how much information you can fit into two small paragraphs that can greatly sell your business.  "
 	info[15] = "This line can be used to give some Footer information such as Company and contact information."
-	info[16] = "Link 2 Summary:  In this section you will write a detailed summary of what information you want to hold in this link.  It can be up to 256 characters."
-	info[17] = "Link 3 Information"
-	info[18] = "Link 3 Summary:  In this section you will write a detailed summary of what information you want to hold in this link.  It can be up to 256 characters."
-	info[19] = "Link 4 Information"
-	info[20] = "Link 4 Summary:  In this section you will write a detailed summary of what information you want to hold in this link.  It can be up to 256 characters."	
+	info[16] = "First Slide Caption"
+	info[17] = "Second Slide Caption"
+	info[18] = "Third Slide Caption"
+	info[19] = "Link 2 Summary:  In this section you will write a detailed summary of what information you want to hold in this link.  It can be up to 256 characters."
+	info[20] = "Link 3 Information"
+	info[21] = "Link 3 Summary:  In this section you will write a detailed summary of what information you want to hold in this link.  It can be up to 256 characters."
+	info[22] = "Link 4 Information"
+	info[23] = "Link 4 Summary:  In this section you will write a detailed summary of what information you want to hold in this link.  It can be up to 256 characters."	
 		
 	
 	info_note = ["" for x in range(rn)]
@@ -100,6 +103,9 @@ def page_set(request):
 	info_note[18] = ""
 	info_note[19] = ""
 	info_note[20] = ""
+	info_note[21] = ""
+	info_note[22] = ""
+	info_note[23] = ""
 	
 	hook = ["" for x in range(rn)]
 	for y in range(0,rn):
