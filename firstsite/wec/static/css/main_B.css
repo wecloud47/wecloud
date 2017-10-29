@@ -1,0 +1,12 @@
+.images_B_2 {
+	width:240px;
+	height:210px;
+	object-fit:cover;
+}
+
+.images_B_slide {
+	width:100%;
+	height:380px;
+	object-fit:cover;
+}
+	
