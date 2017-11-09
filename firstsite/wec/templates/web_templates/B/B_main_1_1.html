@@ -1,0 +1,62 @@
+{% extends "web_templates/B/B_main.html" %}
+{% block content %}
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">{{list.19.1}}
+                        <strong>{{list.4.1}}</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-md-6">
+                    
+                    <img class="img-responsive img-border img-left" src="/static/wec/wec_company/{{request.session.active_website}}/slide-2.jpg?{{TCUR}}" alt="" width="600" height="600">
+                </div>
+                <div class="col-md-6">
+                    <p>{{list.20.1}}</p>
+                    <p>{{list.21.1}}</p>
+                    <p>{{list.22.1}}</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Our
+                        <strong>Team</strong>
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img style="width:240px;height:210px;object-fit:cover;"  src="/static/wec/wec_company/{{request.session.active_website}}/person1.jpg?{{TCUR}}" alt="">
+                    <h3>Susan Smith
+                        <small>CEO</small>
+                    </h3>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img style="width:240px;height:210px;object-fit:cover;" src="/static/wec/wec_company/{{request.session.active_website}}/person2.jpg?{{TCUR}}" alt="">
+                    <h3>Bob Jones
+                        <small>Marketing</small>
+                    </h3>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img style="width:240px;height:210px;object-fit:cover;" src="/static/wec/wec_company/{{request.session.active_website}}/person3.jpg?{{TCUR}}" alt="">
+                    <h3>Harry Clark
+                        <small>Design</small>
+                    </h3>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+{% endblock %}	
