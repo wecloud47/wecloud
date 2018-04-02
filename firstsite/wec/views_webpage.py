@@ -79,7 +79,7 @@ def home(request,addy):
 	try:
 		request.session["active_link"]
 	except:
-		request.session["active_link"] = 0	
+		request.session["active_link"] = 0
 	tmp = addy
 	active_link = int(request.session["active_link"])
 	request.session["addy"] = addy
@@ -121,13 +121,20 @@ def home(request,addy):
 	list = zip(mt,nt,it,lt,ht)
 	#except:
 	#	return render(request, 'web_fail.html')
+	x1 = nt[25].split(' ',1)[0]  #Street Number
+	x2 = nt[25].split(' ',1)[1]  #Street Name
+	x3 = nt[26]                  #City
+	x4 = nt[27]                  #State
+
 	
 	
 	request.session["web_addy"] = template
 	
 	tcur=int(time.time())
 	
-	return render(request, template, {'list':list, 'Tmp2':tmp2,'lines':l,'TCUR':tcur})
+	
+
+	return render(request, template, {'list':list, 'Tmp2':tmp2,'lines':l,'x1':x1,'x2':x2,'x3':x3,'x4':x4,'TCUR':tcur})
 
 	
 def web_link(request,hook):

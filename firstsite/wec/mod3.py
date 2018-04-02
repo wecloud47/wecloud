@@ -53,7 +53,7 @@ def page_set(request):
 	cursor.execute("DELETE FROM WC_Templates WHERE template = '%s'" % (template))
 	db.commit()
 	link_number = 1
-	rn = 25
+	rn = 32
 	info = ["" for x in range(rn)]
 	info[0] = "About"
 	info[1] = "Blog"
@@ -78,9 +78,16 @@ def page_set(request):
 	info[20] = "This is a great place to introduce your company or project and describe what you do."
 	info[21] = "You could even go into even further detail with a nice descriptive second paragraph."
 	info[22] = "If you feel like it you could even go into further detail yet with this third paragraph.  You may even wish to expand on those involved in your company here."
-	info[23] = "Link 4 Information"
-	info[24] = "Link 4 Summary:  In this section you will write a detailed summary of what information you want to hold in this link.  It can be up to 256 characters."	
-		
+	info[23] = "Contact"
+	info[24] = "Please fill in the information below to contact someone from our staff and we will get back to you as soon as possible."	
+	info[25] = "900 Beach St"
+	info[26] = "San Francisco"
+	info[27] = "CA"
+	info[28] = "94109"
+	info[29] = "USA"
+	info[30] = "123.456.7890"
+	info[31] = "name@example.com"
+	
 	
 	info_note = ["" for x in range(rn)]
 	info_note[0] = "_1.html"
@@ -108,6 +115,13 @@ def page_set(request):
 	info_note[22] = ""
 	info_note[23] = ""
 	info_note[24] = ""
+	info_note[25] = ""
+	info_note[26] = ""
+	info_note[27] = ""
+	info_note[28] = ""
+	info_note[29] = ""
+	info_note[30] = ""
+	info_note[31] = ""
 	
 	hook = ["" for x in range(rn)]
 	for y in range(0,rn):
