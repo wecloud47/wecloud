@@ -160,6 +160,10 @@ def web(request,addy):
 		request.session["active_link"]
 	except:
 		request.session["active_link"] = 0
+	try:
+		request.session["active_type"]
+	except:
+		request.session["active_link"] = ''
 	tmp = addy
 	active_link = int(request.session["active_link"])
 			

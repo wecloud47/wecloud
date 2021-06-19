@@ -17,7 +17,7 @@ def send_email (message_subject, message_text, user, db, toaddrs):
     server.ehlo()
     server.starttls()
     server.ehlo()
-    server.login('wecloud47@gmail.com', 'benny6868')
+    server.login('wecloud47@gmail.com', 'Tounces0909')
     message = "From: %s\r\n" % frname + "To: %s\r\n" % toaddrs + "Subject: %s\r\n" % message_subject + message_text + "\r\n"
     server.sendmail(fromaddr, toaddrs, message)
     server.quit()
