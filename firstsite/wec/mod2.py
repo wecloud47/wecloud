@@ -12,6 +12,7 @@ import os
 import errno
 import shutil
 
+# test
 def dir_test(request):
     mode = 0777
     path = r'firstsite/wec/static/wec/testrun2'
