@@ -5,6 +5,7 @@ from django.conf.urls import include, url
 from firstsite.wec.ipic import image_setup, image_write
 from firstsite.wec.views_test import modal_form, testing,ptest1
 from firstsite.wec.views import main, login_error, dashboard, pmain, mmain, test, fill, graph, done,test3, blog, blog_4
+from firstsite.wec.views import email_test8
 from firstsite.wec.views2 import thanks, login, register, members_db, membersdel, emailtest, services, about, contact
 from firstsite.wec.views2 import registration, fade,pc,mobile, ssize, members_features,picture
 from firstsite.wec.views_webpage import web, web_edit,page_delete,done_page_edit,web_page_reload,web_edit2,home,web_link
@@ -53,6 +54,7 @@ urlpatterns = [
 		
 		# ************************************************************
 		url(r'^test3/',test3),
+        url(r'^email_test8/',email_test8),
         url(r'^login/',login),
         url(r'^emailtest/',emailtest),
         url(r'^register/',register),
