@@ -11,6 +11,7 @@ from smtplib import SMTP
 from time import strftime
 import time
 
+# Email test is used to verify email bounce works
 def email_test8(request):
 	b="\r\n"
 	message_subject = 'Next One'
