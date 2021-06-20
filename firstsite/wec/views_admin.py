@@ -16,63 +16,64 @@ import MySQLdb
 import datetime
 
 def update_database(request):
-    page_set(request)
-    return
-    
+	page_set(request)
+	return
+	
 def admin_debug(request):
-    return render(request,'debug.html')
+	return render(request,'debug.html')
 	
 def pages(request):
-    current_db = request.session["active_db"]
-    db, cur = db_open()
-    sql = "SELECT DISTINCT webpage FROM webpages_manager where DB = '%s'" %(current_db)
-    cur.execute(sql)
-    webpages = cur.fetchall()
-    db.close()
-    return webpages
-    	
+	current_db = request.session["active_db"]
+	db, cur = db_open()
+	sql = "SELECT DISTINCT webpage FROM webpages_manager where DB = '%s'" %(current_db)
+	cur.execute(sql)
+	webpages = cur.fetchall()
+	db.close()
+	return webpages
+		
 def users(request):
-    current_db = request.session["active_db"]
-    db, cur = db_open()
-    sql = "SELECT * FROM wec_members where DB = '%s'" %(current_db)
-    cur.execute(sql)
-    members_db = cur.fetchall()
-    db.close()
-    return members_db
+	current_db = request.session["active_db"]
+	db, cur = db_open()
+	sql = "SELECT * FROM wec_members where DB = '%s'" %(current_db)
+	cur.execute(sql)
+	members_db = cur.fetchall()
+	db.close()
+	return members_db
 
 # Method to display the users in the current db
 def display_users(request):
-    members_db = users(request)
-    return render(request,'display_users.html',{'Members':members_db})
+	members_db = users(request)
+	return render(request,'display_users.html',{'Members':members_db})
 
 # Method to display the users in the current db
 def display_webpages(request):
-    webpages = pages(request)
-    return render(request,'display_webpages.html',{'Webpages':webpages})
-    
+	webpages = pages(request)
+	return render(request,'display_webpages.html',{'Webpages':webpages})
+	
 # Method to add the new user name to the required database    
 def admin_users(request):   
-    new_name = request.session["admin_new_user"]
-    current_db = request.session["active_db"]
-    tpe = "user"
-    new_user = "---"
-    new_pwd = "password"
-    dt = datetime.datetime.now()
-    db, cur = db_open()  
-    cur.execute('''INSERT INTO wec_members(name, user, type, signup, DB, password) VALUES(%s, %s, %s, %s, %s, %s)''', (new_user, new_name, tpe, dt, current_db, new_pwd))
-    db.commit()
-    db.close()
-    return 
+	new_name = request.session["admin_new_user"]
+	current_db = request.session["active_db"]
+	tpe = "user"
+	new_user = "---"
+	new_pwd = "password"
+
+	dt = datetime.datetime.now()
+	db, cur = db_open()  
+	cur.execute('''INSERT INTO wec_members(name, user, type, signup, DB, password) VALUES(%s, %s, %s, %s, %s, %s)''', (new_user, new_name, tpe, dt, current_db, new_pwd))
+	db.commit()
+	db.close()
+	return 
 
 # Method to produce form and add new user 
 def admin_add_users(request):	
 	if request.POST:
-        
-        # utilize the database request variable 'active_db' 
+		
+		# utilize the database request variable 'active_db' 
 		tec = request.POST.get("user")       
 		request.session["admin_new_user"] = tec
-	        admin_users(request)
-        	return display_users(request)
+		admin_users(request)
+		return display_users(request)
 		
 	else:
 		form = admin_addUsers()
@@ -88,8 +89,8 @@ def admin_add_users(request):
 def admin_add_webpage(request):	
 	#request.session["testt"] = '<img src="/static/template_1.jpg"  height="160" width="300">'
 	if request.POST:
-        
-        # utilize the database request variable 'active_db' 
+		
+		# utilize the database request variable 'active_db' 
 		web = request.POST.get("web")       
 		request.session["admin_new_webpage"] = web
 		if request.POST.get("A"):
@@ -148,8 +149,8 @@ def admin_delete_webpage(request,web):
 	return display_webpages(request)
 	
 def admin_webname(request):
-    request.session["admin_switch1"] = 1
-    return 
+	request.session["admin_switch1"] = 1
+	return 
 
 	# Error in webpage setup.   Return to submission form
 def admin_add_webpage_error(request):

@@ -89,6 +89,7 @@ def home(request,addy):
 	cursor.execute(sql)
 	tmp = cursor.fetchall()
 	tmp2 = tmp[0]
+
 	global  mt, nt, ut, it, lt, ht
 	nt = [] # info (description or label of link)
 	mt = [] # template
@@ -97,6 +98,9 @@ def home(request,addy):
 	lt = [] # variable for type (which could be a link or empty)
 	ht = [] # variable for hook
 	[eup(x) for x in tmp]
+	
+	t=5/0
+
 	
 	# Calculate size of box based on line length
 	tst = len(nt[7])   # length of that field for test
