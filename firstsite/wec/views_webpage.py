@@ -24,7 +24,7 @@ import MySQLdb
 
 # Module to filter tuple
 def eup(x):
-		global st, nt, mt, ut, lt, ht
+		# global st, nt, mt, ut, lt, ht
 		# template
 		mt.append(str(x[3]))
 		# info
@@ -80,28 +80,41 @@ def home(request,addy):
 		request.session["active_link"]
 	except:
 		request.session["active_link"] = 0
-	tmp = addy
+	tmp_addy = addy
 	active_link = int(request.session["active_link"])
 	request.session["addy"] = addy
 	#try:
 	db, cursor = db_open()
-	sql = "SELECT * FROM webpages_manager where webpage = '%s'" %(tmp)
+	sql = "SELECT * FROM webpages_manager where webpage = '%s'" %(tmp_addy)
 	cursor.execute(sql)
 	tmp = cursor.fetchall()
 	tmp2 = tmp[0]
 
-	global  mt, nt, ut, it, lt, ht
+	# global  mt, nt, ut, it, lt, ht
 	nt = [] # info (description or label of link)
 	mt = [] # template
 	ut = [] # webpage
 	it = [] # id
 	lt = [] # variable for type (which could be a link or empty)
 	ht = [] # variable for hook
-	[eup(x) for x in tmp]
+	# [eup(x) for x in tmp]
 	
-	t=5/0
+	for x in tmp:
+		mt.append(str(x[3]))
+		# info
+		nt.append(str(x[4]))
+		# webpage
+		ut.append(str(x[2]))
+		# id
+		it.append(str(x[0]))
+		# type
+		lt.append(str(x[5]))
+		# hookg
+		ht.append(str(x[6]))
 
-	
+
+	return render(request, 'test_page1.html',{'a':nt})
+
 	# Calculate size of box based on line length
 	tst = len(nt[7])   # length of that field for test
 	lns = tst
