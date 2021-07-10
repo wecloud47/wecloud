@@ -113,7 +113,7 @@ def home(request,addy):
 		ht.append(str(x[6]))
 
 
-	return render(request, 'test_page1.html',{'a':nt})
+	# return render(request, 'test_page1.html',{'a':nt})
 
 	# Calculate size of box based on line length
 	tst = len(nt[7])   # length of that field for test
@@ -138,10 +138,18 @@ def home(request,addy):
 	list = zip(mt,nt,it,lt,ht)
 	#except:
 	#	return render(request, 'web_fail.html')
-	x1 = nt[25].split(' ',1)[0]  #Street Number
-	x2 = nt[25].split(' ',1)[1]  #Street Name
-	x3 = nt[26]                  #City
-	x4 = nt[27]                  #State
+	try:
+		x1 = nt[25].split(' ',1)[0]  #Street Number
+		x2 = nt[25].split(' ',1)[1]  #Street Name
+		x3 = nt[26]                  #City
+		x4 = nt[27]                  #State
+	except:
+		x1=''
+		x2=''
+		x3=''
+		x4=''
+
+		dummy=0
 
 	
 	
