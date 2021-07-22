@@ -111,6 +111,7 @@ def home(request,addy):
 	else:
 		template = "web_templates/"+ max(mt) + "/"+ max(mt)+"_main.html"
 	active_website = max(ut)
+
 		# Assign each nt value (link_number) as array number to info
 		# 
 		
@@ -251,7 +252,7 @@ def web(request,addy):
 			im = Image.open(request.FILES['image'])
 			width, height = im.size
 			save_file2(request,request.FILES['image'], web_site)
-
+		
 			
 			#ratio = width / float(height)
 			#multiplier = 40 * ratio
@@ -473,7 +474,7 @@ def save_file2(request,file, db):
 	if request.session["change"] == 'logo':
 		fn = "logoA.jpg"
 	else:
-		fn = "backA.jpg"	
+		fn = "backB.jpg"	
 	
 	try:
 		os.remove('%s/%s/%s'%(str(path),db,str(fn)))
