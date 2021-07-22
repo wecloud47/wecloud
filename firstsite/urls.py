@@ -6,8 +6,8 @@ from firstsite.wec.ipic import image_setup, image_write
 from firstsite.wec.views_test import modal_form, testing,ptest1
 from firstsite.wec.views import main, login_error, dashboard, pmain, mmain, test, fill, graph, done,test3, blog, blog_4
 from firstsite.wec.views import email_test8
-from firstsite.wec.views2 import thanks, login, register, members_db, membersdel, emailtest, services, about, contact
-from firstsite.wec.views2 import registration, fade,pc,mobile, ssize, members_features,picture
+from firstsite.wec.views2 import thanks, login, register, members_db, membersdel, emailtest, services, about, contact, login2
+from firstsite.wec.views2 import registration, fade,pc,mobile, ssize, members_features,picture,form_action1
 from firstsite.wec.views_webpage import web, web_edit,page_delete,done_page_edit,web_page_reload,web_edit2,home,web_link
 from firstsite.wec.views_webpage import web_template_initialize, home_link,home_initial,web_initial
 from firstsite.wec.views_website import image_update
@@ -73,6 +73,8 @@ urlpatterns = [
         #url(r'^member/$', member),
         url(r'^fade/$', fade),
         url(r'^login_error/$', login_error),
+        url(r'^form_action1/$', form_action1),
+        url(r'^login2/$', login2),
         url(r'^dashboard/$', dashboard),
         url(r'^thanks/', thanks),
         url(r'^done/', done),

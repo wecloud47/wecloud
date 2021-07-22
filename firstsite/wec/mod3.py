@@ -6,31 +6,31 @@ from django.shortcuts import render_to_response
 from django.shortcuts import render
 from firstsite.wec.views_db import db_open
 def alter_database(request):
-    page_set(request)
-    return
+	page_set(request)
+	return
 
 
-    
+	
 # ***********************************************************************************
 # Create a WebTable Quickly.    Just Modify Name and column                         *
 # The Call is             create_webtable                                           *
 # ***********************************************************************************
 def repair_database(request):
-    db, cursor = db_open()
-    cursor.execute('''DROP TABLE IF EXISTS WC_Templates''')
-    cursor.execute('''CREATE TABLE IF NOT EXISTS WC_Templates(Id INT PRIMARY KEY AUTO_INCREMENT,template CHAR(10), info TEXT,type CHAR(20),hook INT(10))''')
-    db.commit()
-    cursor.execute('''DROP TABLE IF EXISTS webpages_manager''')
-    cursor.execute('''CREATE TABLE IF NOT EXISTS webpages_manager(Id INT PRIMARY KEY AUTO_INCREMENT, db CHAR(30), webpage CHAR(30),template CHAR(10), info TEXT,type CHAR(20),hook INT(10))''')
-    db.commit()
-    db.close
-    template = ["" for x in range(2)] 
-    template[0] = "A"
-    template[1] = "B"
-    for x in range(0,2):
+	db, cursor = db_open()
+	cursor.execute('''DROP TABLE IF EXISTS WC_Templates''')
+	cursor.execute('''CREATE TABLE IF NOT EXISTS WC_Templates(Id INT PRIMARY KEY AUTO_INCREMENT,template CHAR(10), info TEXT,type CHAR(20),hook INT(10))''')
+	db.commit()
+	cursor.execute('''DROP TABLE IF EXISTS webpages_manager''')
+	cursor.execute('''CREATE TABLE IF NOT EXISTS webpages_manager(Id INT PRIMARY KEY AUTO_INCREMENT, db CHAR(30), webpage CHAR(30),template CHAR(10), info TEXT,type CHAR(20),hook INT(10))''')
+	db.commit()
+	db.close
+	template = ["" for x in range(2)] 
+	template[0] = "A"
+	template[1] = "B"
+	for x in range(0,2):
 		page_set(request,template[x])
-    request.session["test"] = "Complete"		
-    return render(request, 'done2.html')
+	request.session["test"] = "Complete"		
+	return render(request, 'done2.html')
 
 # ***********************************************************************************
 # Testing Module to add information to various Tables on call                       *
@@ -138,7 +138,7 @@ def page_set(request):
 	# Use below line if page_set is being used indirectly to alter WC_Template structure
 	#return
 		
-    
+	
 
 
 		

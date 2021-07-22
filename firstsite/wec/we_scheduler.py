@@ -1,4 +1,4 @@
-from mods1 import matrix_set
+from firstsite.wec.mods1 import matrix_set
 from django.shortcuts import render_to_response
 from math import trunc
 from django.shortcuts import render

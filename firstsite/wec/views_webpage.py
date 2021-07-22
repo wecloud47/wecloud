@@ -118,7 +118,8 @@ def home(request,addy):
 		#template = "web.html"
 		
 	# Zip all variables together into list	
-	list = zip(mt,nt,it,lt,ht)
+	listx = zip(mt,nt,it,lt,ht)
+	list_debug = list(listx)
 	#except:
 	#	return render(request, 'web_fail.html')
 	x1 = nt[25].split(' ',1)[0]  #Street Number
@@ -132,9 +133,7 @@ def home(request,addy):
 	
 	tcur=int(time.time())
 	
-	
-
-	return render(request, template, {'list':list, 'Tmp2':tmp2,'lines':l,'x1':x1,'x2':x2,'x3':x3,'x4':x4,'TCUR':tcur})
+	return render(request, template, {'list':list_debug, 'Tmp2':tmp2,'lines':l,'x1':x1,'x2':x2,'x3':x3,'x4':x4,'TCUR':tcur})
 
 	
 def web_link(request,hook):
@@ -166,10 +165,10 @@ def web(request,addy):
 		request.session["active_link"] = ''
 	tmp = addy
 	active_link = int(request.session["active_link"])
-			
+
 	request.session["addy"] = addy
-	if request.session["active_type"] != 'Administrator':
-		return home(request,addy)
+	# if request.session["active_type"] != 'Administrator':
+	# 	return home(request,addy)
 	#try:
 	db, cursor = db_open()
 	sql = "SELECT * FROM webpages_manager where webpage = '%s'" %(tmp)
@@ -196,7 +195,8 @@ def web(request,addy):
 		
 	request.session["active_website"] = active_website
 		#template = "web.html"
-	list = zip(mt,nt,it,lt,ht)
+	listx = zip(mt,nt,it,lt,ht)
+	listy = list(listx)
 	
 	
 	
@@ -207,6 +207,7 @@ def web(request,addy):
 		xt.append(nt[ab])
 		yt.append(it[ab])
 	list2 = zip(xt,yt)
+
 	# ********************************************
 	
 	
@@ -298,14 +299,13 @@ def web(request,addy):
 #	return render(request,'done2.html', {'template':list2})
 
 	tcur=int(time.time())
-	
-	return render(request, template, {'list':list,'list2':list2, 'Tmp2':tmp2,'TCUR':tcur,'args':args})
+	return render(request, template, {'list':listy,'list2':list2, 'Tmp2':tmp2,'TCUR':tcur,'args':args})
 	# ***********************************************************************************************************************	
 	
 	
 		# template is assigned template retrieved from DB.  list is links for pictures etc sent
 		# .....uncomment below code for normal  ............
-    	#return render(request, template,{'list':list,'Tmp2':tmp2})
+		#return render(request, template,{'list':list,'Tmp2':tmp2})
 		
 def done_page_edit(request):
 	# update webpages_manager where webpage = request.session.addy and lin1 name = request.session.link1
@@ -401,28 +401,28 @@ def web_edit(request,addy):
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ UPDATE IMAGE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 def web_edit2(request):
-    if request.method == 'POST':
-        form = ImageForm(request.POST, request.FILES)
-        if form.is_valid() and form.is_multipart():
-            request.session["active_db"] = request.session["addy"]
-            # Assign Database associated with entry to determine folder for images
-            db = request.session["active_db"]
-           
-            save_file2(request.FILES['image'], db)
-            request.session["refresh_1"] = 1
+	if request.method == 'POST':
+		form = ImageForm(request.POST, request.FILES)
+		if form.is_valid() and form.is_multipart():
+			request.session["active_db"] = request.session["addy"]
+			# Assign Database associated with entry to determine folder for images
+			db = request.session["active_db"]
+		   
+			save_file2(request.FILES['image'], db)
+			request.session["refresh_1"] = 1
    
 #            return render(request,'done_page_edit2.html')
-            return web_page_reload(request)
-        else:
+			return web_page_reload(request)
+		else:
 #            return render(request,'done_page_edit2.html')
-            return web_page_reload(request)
-    else:
-        form = ImageForm()
-    args = {}
-    args.update(csrf(request))
-    args['form']=form
-    
-    return render(request,'up.html', args)
+			return web_page_reload(request)
+	else:
+		form = ImageForm()
+	args = {}
+	args.update(csrf(request))
+	args['form']=form
+	
+	return render(request,'up.html', args)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 def web_page_reload(request):
@@ -457,32 +457,32 @@ def page_delete(request):
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Save File for Image @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 def save_file2(request,file, db):
-    path = path_local() + 'wec_company'
-    filename = file._get_name()
-    # create directory to save images if one doesn't exist
-    if not (os.path.exists('%s/%s' % (str(path), db))):
-    	os.mkdir('%s/%s' % (str(path), db))
-    # save image
-    
-    fd = open('%s/%s/%s' % (str(path), db, str(filename)), 'wb')
-    for chunk in file.chunks():
-        fd.write(chunk)
-    fd.close()
-        
-    # rename image to required name
-    if request.session["change"] == 'logo':
+	path = path_local() + 'wec_company'
+	filename = file._get_name()
+	# create directory to save images if one doesn't exist
+	if not (os.path.exists('%s/%s' % (str(path), db))):
+		os.mkdir('%s/%s' % (str(path), db))
+	# save image
+	
+	fd = open('%s/%s/%s' % (str(path), db, str(filename)), 'wb')
+	for chunk in file.chunks():
+		fd.write(chunk)
+	fd.close()
+		
+	# rename image to required name
+	if request.session["change"] == 'logo':
 		fn = "logoA.jpg"
-    else:
+	else:
 		fn = "backA.jpg"	
 	
-    try:
+	try:
 		os.remove('%s/%s/%s'%(str(path),db,str(fn)))
-    except:
+	except:
 		dummy_variable = 11		
 	
 	
-    # write image to dirctory
-    os.rename(('%s/%s/%s' % (str(path),db,str(filename))),('%s/%s/%s' % (str(path),db,str(fn))))
+	# write image to dirctory
+	os.rename(('%s/%s/%s' % (str(path),db,str(filename))),('%s/%s/%s' % (str(path),db,str(fn))))
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

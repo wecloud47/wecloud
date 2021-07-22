@@ -14,7 +14,7 @@ import shutil
 
 
 def dir_test(request):
-    mode = 0777
+    mode = 777
     path = r'firstsite/wec/static/wec/testrun2'
     os.makedirs(path)
     os.chmod(path,mode)
@@ -23,7 +23,7 @@ def dir_test(request):
 
 # ***  Creates a directory npath and gives full permissions ****
 def create_directory(dpath):
-    mode = 0777
+    mode = 777
 #    if dpath == 'firstsite/wec/static/wec/':
 #	npath = r'firstsite/wec/static/wec/wec_company'
 #    else:

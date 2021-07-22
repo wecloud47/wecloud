@@ -20,7 +20,23 @@
     <script src="/static/bootstrap/js/jquery.min.js"></script>
 	<script src="/static/bootstrap/js/bootstrap.min.js"></script> 
 
+{% block style %}
+<style type="text/css">
+	.mainset{color:black;text-align:center;float:left;width:100%}
+	.wrapper_main {background:chartreuse;width:90%;margin-left: 10px;}
+	.frame1 {color:black;text-align:center;float:left;width:32%;margin-bottom: 5px;}
+	.frame2a{color:black;text-align:center;background:rgb(202, 188, 83);opacity:0.4;float:left;width:32%;position:relative;left:5px;border-radius: 25px;margin-bottom: 5px;}
+	.frame2{color:black;text-align:left;background:{{request.session.form_color}};opacity:0.6;border-radius: 25px;float:left;width:32%;position:relative;left:5px;margin-bottom: 15px;}
+	.frame3 {color:black;text-align:center;background:rgb(61, 138, 64);float:left;width:32%;position:relative;left:10px;margin-bottom: 5px;}
+</style>
+<style>
+	td.font1{font-family: "BioRhyme","Ariel" serif;}
+	td.font2{font-family: "Times New Roman", Times, serif;}
+</style>
+{% endblock %}	
 
+{% block style_add %}
+{% endblock %}
 	</head>
 <body>
 
@@ -56,7 +72,7 @@
 		<li><a href="/page_set"><span class="glyphicon glyphicon-cloud"></span>Update</a></li>
 		<li><a href=""></a></li>
         <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="/login2"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>

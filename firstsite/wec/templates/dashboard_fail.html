@@ -1,25 +1,21 @@
 {% extends "main.html" %}
-<html>
-<head>
-<style>
-{% block style1 %}
-.banner1_bg{position:absolute;background: linear-gradient(#000000, #424242); left:40px; width:{{request.session.active_wr}}px; top:{{request.session.active_y1}}px; height:{{request.session.active_h}}px;z-index:-440;	border-radius: 5px;line-height: {{request.session.active_s1}}%;}
-.pos{position:absolute;background-color: #000000;opacity: 0.8;filter:alpha(opacity=80); left:10%;  top:20%; width:35%;height:200px;border-radius: 25px;}
-.form_css{color: #ffffff;display:table;}
-{% endblock %}
 
-</style>
-</head>
+
 
 {% block content %}
-<div class="col-sm-3" style="background-color: #000000;opacity: 0.6;filter:alpha(opacity=60);z-index: -10;border-radius: 15px;">
-</b><font style="font-size: {{request.session.active_fh}}%;" face="Verdana" color=#FFFFFF ><u>ERROR !</u></b><br><br>
-<font style="font-size: {{request.session.active_f}}%;" face="Verdana" color=#FFFFFF >
-Incorrect password or LogIn <br>
-Please contact us if you are in need of assistance.</font>
+<div class="wrapper_main">
+	<div class="frame1">  <br> </div>
+		<div class="frame2">  
+			<table>
+				<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+				<tr><td colspan="2" style="color:#d9d9d9;font-size:30px;"><center><u>Error !</u></center></td></tr>
+				<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+				<tr><td style="color:#d9d9d9;font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;Incorrect Password or Login</td></tr>
+				<tr><td style="color:#d9d9d9;font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;Please contact us if you are in need of assistance.</td></tr>
+				<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+			</table>
+		</div>
+	</div>
 </div>
 {% endblock %}
 
-
-
-</html>

@@ -1,0 +1,32 @@
+<!-- Extends from certain main html -->
+{% extends request.session.extends1 %}
+
+
+
+{% block content %}
+<form action="" method="post">{% csrf_token %}
+	<div class="wrapper_main">
+		<div class="frame1">  <br> </div>
+		<div class="frame2">  
+			<br>	
+			<center><table>
+				<tr>
+					<td colspan="2" style="color:{{request.session.form_font_color}};font-size:30px;"><center>{{request.session.form_title}}</center><br></td>
+				</tr>
+			{% for i in request.session.form_var %} 
+				<tr>
+					<td>&emsp;<font style="color:{{request.session.form_font_color}};">{{i.0}}</font></td>
+					<td><input style="font-size:14px;width:220px;height:30px;margin-bottom: 5px;" id="{{i.0}}" name="{{i.0}}" value="{{i.0}}" onfocus="this.value=''"  type="{{i.1}}"></td>
+				</tr>
+			
+			{% endfor %}
+			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>
+			<tr>
+			<td>&nbsp;&nbsp;&nbsp;&nbsp;
+				<input style="background-color: #999999;border-radius: 10px;height:30px;" type="submit" name="button1" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ENTER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;">
+			<br><br></td></tr>
+		</table></center>
+		</div>
+	</div>
+</form>	
+{% endblock %}
