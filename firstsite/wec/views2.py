@@ -11,6 +11,7 @@ from django.core.context_processors import csrf
 from smtplib import SMTP
 from firstsite.wec.views_db import db_set
 
+# Running this update July 22 to hopefully fix
 
 def send_email (message_subject, message_text, user, db, toaddrs):
 	fromaddr = 'WeCloud.ca@gmail.com'
