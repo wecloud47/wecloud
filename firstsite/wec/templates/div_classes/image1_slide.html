@@ -1,0 +1,52 @@
+<!-- ***************************************************   Modal ******************************************  -->
+<div class="modal fade" id="image1_slide" tabindex="-1" role="dialog"  
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+		<div class="modal-dialog modal-sm">
+        <div class="modal-content"  style=" background-color: #DBDBDB;">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    <center>Image Editing</center>
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">                
+                <!-- <form class="form-horizontal" role="form"> -->
+				<!--  <form action="" method="post">{% csrf_token %}	-->
+					
+                  <div class="form-group">
+						<center>
+					
+							<a href="#image1_slide_reload" role="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal">New Image</a>
+						&nbsp;&nbsp;&nbsp;
+						<a href="/web/{{request.session.addy}}" role="button" class="btn btn-primary"> Image Link</a>
+						<!--
+						<button type="button" name="Rename" value="Select" class="btn btn-primary">
+							Go to link
+						</button>
+						-->
+						</center>
+                  </div>
+  
+                <!-- </form>  -->              
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                            Cancel
+                </button>
+
+            </div>
+        </div>    
+        </div>
+    </div>
+</div>

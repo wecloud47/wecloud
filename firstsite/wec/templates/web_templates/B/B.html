@@ -1,40 +1,50 @@
 <!DOCTYPE html>
-<!-- Template A.html -->
-<html lang="en">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<head>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <title>{{request.session.active_website}}</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{request.session.active_website}}</title>
 
-<!-- BOOTSTRAP LOAD  -->
-  <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"> 
-  <script src="/static/bootstrap/js/jquery.min.js"></script>
-  <script src="/static/bootstrap/js/bootstrap.min.js"></script>
-<!-- **************  -->
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/bootstrap/B_Template/css/bootstrap.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="/static/css/main_a.css">
-  <link rel="stylesheet" href="/static/css/buttons1.css">
+    <!-- Fonts -->
+    <link href="/static/bootstrap/B_Template/fonts/css/font_B_1.css" rel="stylesheet" type="text/css">
+    <link href="/static/bootstrap/B_Template/fonts/css/font_B_2.css" rel="stylesheet" type="text/css">
+    
 
-  
+
+	<link rel="stylesheet" href="/static/css/main_a.css">
+	<link rel="stylesheet" href="/static/css/buttons3.css"> 
+	<!-- <link rel="stylesheet" href="/static/css/main_B.css"> -->
+
+	<link rel="stylesheet" href="/static/css/business-casual.css"> 
+	<link rel="stylesheet" href="/static/css/B_blog.css"> 
+
   <!-- ***************************************************** -->
   <!-- Include Div Class for Link Forms -->
-  
-  {% include "div_classes/A/A_edit1_1.html" %}        <!-- modals for link rename -->
-  {% include "div_classes/A/A_edit1_2.html" %}
-  {% include "div_classes/A/A_edit1_3.html" %}
-  {% include "div_classes/A/A_edit1_4.html" %}
-  {% include "div_classes/A/A_edit1_1_rename.html" %} 
-  {% include "div_classes/A/A_edit1_2_rename.html" %}
-  {% include "div_classes/A/A_edit1_3_rename.html" %}
-  {% include "div_classes/A/A_edit1_4_rename.html" %} <!-- ********************** -->
-  
+  {% include "div_classes/B/B_edit1_1.html" %}        <!-- modals for link rename -->
+  {% include "div_classes/B/B_edit1_2.html" %}
+  {% include "div_classes/B/B_edit1_3.html" %}
+  {% include "div_classes/B/B_edit1_4.html" %}
+  {% include "div_classes/B/B_edit1_1_rename.html" %} 
+  {% include "div_classes/B/B_edit1_2_rename.html" %}
+  {% include "div_classes/B/B_edit1_3_rename.html" %}
+  {% include "div_classes/B/B_edit1_4_rename.html" %} <!-- ********************** -->
   {% include "div_classes/image1_edit.html" %}  <!-- modals for image uploads -->
-  {% include "div_classes/image2_edit.html" %}   
-  {% include "div_classes/image1_reload.html" %}
-  {% include "div_classes/image2_reload.html" %} <!-- ********************** -->
-  
+  {% include "div_classes/image_back_edit.html" %}   
+  {% include "div_classes/image_back_reload.html" %}
+  {% include "div_classes/image1_slide.html"%}
+  {% include "div_classes/image1_slide_reload.html"%}
+  {% include "div_classes/image2_slide.html"%}
+  {% include "div_classes/image2_slide_reload.html"%}
+  {% include "div_classes/image3_slide.html"%}
+  {% include "div_classes/image3_slide_reload.html"%}
+  {% include "div_classes/image1_reload.html" %} <!-- ********************** -->
   {% include "div_classes/page1_1_edit.html" %}  <!-- modals for Information Edits -->
   {% include "div_classes/page1_2_edit.html" %}
   {% include "div_classes/page1_3_edit.html" %}
@@ -54,139 +64,185 @@
     {% include "div_classes/page2_8_edit.html" %} <!-- ********************** -->
   <!-- ***************************************************** -->
 
+</head>
 
-
-	</head>
 <body>
+	
+  <img alt="full screen background image" src="/static/wec/wec_company/{{request.session.active_website}}/backB.jpg?{{TCUR}}" alt="" id="full-screen-background-image" />
+    
+    <!-- Company Name -->
+    <div class="brand">{{list.4.1}}</div>
+    <!-- Main Address of Company -->
+    <div class="address-bar">{{list.25.1}} | {{list.26.1}} , {{list.27.1}} {{list.28.1}}| {{list.30.1}}</div>
 
-<img alt="full screen background image" src="/static/wec/wec_company/{{request.session.active_website}}/backA.jpg?{{TCUR}}" alt="" id="full-screen-background-image" />
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="/home/{{request.session.addy}}">{{list.4.1}}</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
 
+                  <li><a href="#B_edit1_1" role="button" class="button" data-toggle="modal">{{list.0.1}}</a></li>	
+                  <li><a href="#B_edit1_2" role="button" class="button" data-toggle="modal">{{list.1.1}}</a></li>	
+                  <li><a href="#B_edit1_3" role="button" class="button" data-toggle="modal">{{list.2.1}}</a></li>	
+                  <li><a href="#B_edit1_4" role="button" class="button" data-toggle="modal">{{list.3.1}}</a></li>	
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-	  
-      <!--
-	  <a href="#" onclick="window.open('/web_edit2', 'newwindow', 'width=300, height=250'); return false;">
-	  <img src="/static/wec/wec_company/{{request.session.active_website}}/logoA.jpg"  height="40" width="170">
-	  </a>
-	  -->
-	  <a href="#image1_edit" role="button" class="button button1" data-toggle="modal">
-	  <img src="/static/wec/wec_company/{{request.session.active_website}}/logoA.jpg?{{TCUR}}" alt=""  width="{{request.session.width}}" height="40">
-	  </a>
-	  <!--
-      <img src="/static/wec/wec_company/{{request.session.active_website}}/logoA.jpg"  height="40" width="30">
-	  -->
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-		<li><a href=""></a></li>
-		<li><a href=""></a></li>
-		
-		<!-- Attempt to use one ModalForm and transfer the data based on a loop
-		     Unfortunately, the looped variable x does not pass to modal like list2 does
-		{% for x in list2 %}
-			<li><a href="#ModalForm1" role="button" class="button button1" data-toggle="modal">{{x.0}}</a></li>
-		{% endfor %}	
-		-->	
-		
-        <li><a href="#A_edit1_1" role="button" class="button button1" data-toggle="modal">{{list.0.1}}</a></li>	
-        <li><a href="#A_edit1_2" role="button" class="button button1" data-toggle="modal">{{list.1.1}}</a></li>		
-        <li><a href="#A_edit1_3" role="button" class="button button1" data-toggle="modal">{{list.2.1}}</a></li>			
-        <li><a href="#A_edit1_4" role="button" class="button button1" data-toggle="modal">{{list.3.1}}</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-        
-      </ul>
-      
-    </div>
-  </div>
-</nav>
-
-
-<font color=#000000 >
-	<br><br><br><br><br>
 {% block content %}
 
-
-<!-- Use Page-wrap from CSS main_a.css to utilize sticky footer -->
-<div class="page-wrap">
-  <div class="container">
-	  
-<a href="#ModalForm6" role="button" class="button button1" data-toggle="modal">Edit Background</a>
-
-    <div class="jumbotron" style="background-color:#000000;opacity: 0.6;filter:alpha(opacity=60);border-radius: 25px;">
-        <a href="#page1_1_edit" role="button" class="button button1" data-toggle="modal"><center><font color="white" style="z-index: 9999;"><h1><b>
-		{{list.4.1}}</b></h1></font></a>
-		<a href="#page1_2_edit" role="button" class="button button1" data-toggle="modal"><center><font color="white" style="z-index: 9999;">
-        <font color="white" style="z-index: 9999;"><h3><i>{{list.5.1}}</i></h3></font></center></a>
+    <div class="container">
+        <table style="width:100%;">
+            <tr>
+                <td><a href="#image_back_edit" class="button button3" data-toggle = "modal">Edit Background</a></td>
+                <td><a href="#image1_slide" class="button button3" data-toggle = "modal">Edit Slide 1</a></td>
+                <td><a href="#image2_slide" class="button button3" data-toggle = "modal">Edit Slide 2</a>
+                <td><a href="#image3_slide" class="button button3" data-toggle = "modal">Edit Slide 3</a></td>
+            </tr>
+        </table>
         
-    </div>
-<br><br><br><br>
+        <br>
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12 text-center">
+                    <div id="carousel-example-generic" class="carousel slide">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators hidden-xs">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                        </ol>
 
-    <div class="row">
+                        <!-- Wrapper for slides 
+							  Trouble with object-fit-cover going in a class to load so style was placed 
+							  directly in each of the 3 slides in the carousel
+							  -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                
+                                <img style="width:100%;height:380px;object-fit:cover;" src="/static/wec/wec_company/{{request.session.active_website}}/slide-1.jpg?{{TCUR}}"   alt="">
+								<div class="carousel-caption d-none d-md-block">
+									<h4 class="text-shadow">{{list.16.1}}</h3>
+								</div>
+							</div>
+                            
+                            <div class="item">
+                                
+                                <img style="width:100%;height:380px;object-fit:cover;" src="/static/wec/wec_company/{{request.session.active_website}}/slide-2.jpg?{{TCUR}}" alt="" width="600" height="600">
+								<div class="carousel-caption d-none d-md-block">
+									<h4 class="text-shadow">{{list.17.1}}</h3>
+								</div>
+                            </div>
+                            <div class="item">
+                                
+                                <img style="width:100%;height:380px;object-fit:cover;" src="/static/wec/wec_company/{{request.session.active_website}}/slide-3.jpg?{{TCUR}}" alt="" width="600" height="600">
+								<div class="carousel-caption d-none d-md-block">
+									<h4 class="text-shadow">{{list.18.1}}</h3>
+								</div>
+                            </div>
+                        </div>
 
-        <div class="col-sm-3" style="height:250px;background-color: #000000;opacity: 0.6;filter:alpha(opacity=60);border-radius: 15px;">
-			    <a href="#page1_3_edit" role="button" class="button button1" data-toggle="modal"><center>
-                <font color="white" style="z-index: 9999;">
-                
-					<h3><b>{{list.6.1}}</b></h3></font></center></a>
-                <a href="#page1_4_edit" role="button" class="button button1" data-toggle="modal"><p>{{list.7.1}}</p></a>
-                
-                </p>
-			</font>
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="https://blackrockdigital.github.io/startbootstrap-business-casual/#carousel-example-generic" data-slide="prev">
+                            <span class="icon-prev"></span>
+                        </a>
+                        <a class="right carousel-control" href="https://blackrockdigital.github.io/startbootstrap-business-casual/#carousel-example-generic" data-slide="next">
+                            <span class="icon-next"></span>
+                        </a>
+                    </div>
+                    <h2 class="brand-before">
+                        <small>Welcome to</small>
+                    </h2>
+                    <h1 class="brand-name">{{list.4.1}}</h1>
+                    <hr class="tagline-divider">
+                    <h2>
+                        <small>
+                            <strong>{{list.6.1}}</strong>
+                        </small>
+                    </h2>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-1">
-                <font color="white" style="z-index: 9999;"><center>
-                <h3><b></b></h3></center>
-                <p></p>
-                </font>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">{{list.7.1}}
+                        <strong>{{list.8.1}}</strong>
+                    </h2>
+                    <hr>
+                    <a href="#ModalForm6" class="button button3" data-toggle = "modal">Edit Image</a><br>
+                    <img class="img-responsive img-border img-left" src="/static/wec/wec_company/{{request.session.active_website}}/intro-pic.jpg?{{TCUR}}"  alt="" width="200" height="200">
+                    <hr class="visible-xs">
+                    <p>{{list.9.1}}</p>
+                    <p>{{list.10.1}}</p>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-3" style="height:250px;background-color: #000000;opacity: 0.6;filter:alpha(opacity=60);border-radius: 15px;">
-			    <a href="#page1_5_edit" role="button" class="button button1" data-toggle="modal"><center>
-				<font color="white" style="z-index: 9999;">	
-                <h3><b>{{list.8.1}}</b></h3></font></center></a>
-                 <a href="#page1_6_edit" role="button" class="button button1" data-toggle="modal"><p>{{list.9.1}}</p></a>
-                </font>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">{{list.11.1}}
+                        <strong>{{list.12.1}}</strong>
+                    </h2>
+                    <hr>
+                    <p>{{list.13.1}}</p>
+                    <p>{{list.14.1}}</p>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-1">
-                <font color="white" style="z-index: 9999;"><center>
-                <h3><b></b></h3></center>
-                <p></p>
-                </font>
-        </div>
-        <div class="col-sm-3" style="height:250px;background-color: #000000;opacity: 0.6;filter:alpha(opacity=60);border-radius: 15px;">
-			    <a href="#page1_7_edit" role="button" class="button button1" data-toggle="modal"><center>
-				<font color="white" style="z-index: 9999;">	
-                <h3><b>{{list.10.1}}</b></h3></font></center></a>
-                 <a href="#page1_8_edit" role="button" class="button button1" data-toggle="modal"><p>{{list.11.1}}</p></a>
-                </font>
-        </div>
+
     </div>
-  </div>
-</div>
-<br><br>
-	<!-- Proper sticky footer using main_a.css -->
-    <footer class="site-footer">
-      <div class="container">
-		<p class="text-muted credit">
-		<a href="#page1_9_edit" role="button" data-toggle="modal">
-			  {{list.12.1}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		</a>		
-        <a href="/home/{{request.session.addy}}">Home</a> &nbsp;&nbsp;&nbsp;|
-        <a href="/home_link/{{list.0.4}}">{{list.0.1}}</a> &nbsp;&nbsp;&nbsp;|
-        <a href="/home_link/{{list.1.4}}">{{list.1.1}}</a>&nbsp;&nbsp;&nbsp;|
-        <a href="/home_link/{{list.2.4}}">{{list.2.1}}</a>&nbsp;&nbsp;&nbsp;|
-        <a href="/home_link/{{list.3.4}}">{{list.3.1}}</a>&nbsp;&nbsp;&nbsp;|
-        </p>
-      </div>
+    <!-- /.container -->
+
+
+
+{% endblock %}
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>{{list.15.1}}</p>
+                </div>
+            </div>
+        </div>
     </footer>
-{% endblock %}	
-	</font>
 
-</body>
-</html>
+    <!-- jQuery -->
+    <script src="/static/bootstrap/B_Template/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/bootstrap/B_Template/js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+
+
+
+</body></html>

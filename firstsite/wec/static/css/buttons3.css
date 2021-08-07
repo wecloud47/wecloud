@@ -1,0 +1,35 @@
+
+/*  Below is Code for a button Style   */
+
+
+.button3 {
+    background-color: #444444; 
+
+    color: rgb(236, 232, 167);
+    box-shadow: -3px 3px rgb(131, 131, 131), -2px 2px rgb(131, 131, 131), -1px 1px rgb(131, 131, 131);
+    border: 1px solid rgb(131, 131, 131);
+    border-radius:15px;
+
+    font-weight: 600;
+    width:80px;
+    height:40px;
+    padding-left:8px;
+    padding-right:8px;
+
+    /* border: 2px solid #4CAF50;  */
+}
+
+.button3:hover {
+    background-color: #c5c5c5; 
+    border-radius:15px;
+    font-weight: 600;
+    width:80px;
+    height:40px;
+    color: #0a0a0a; 
+    padding-left:8px;
+    padding-right:8px;
+}
+
+
+/*  Below Code removes all border from buttons on focus  */
+.button2:focus {outline:0;}

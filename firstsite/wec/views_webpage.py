@@ -89,6 +89,7 @@ def home(request,addy):
 	cursor.execute(sql)
 	tmp = cursor.fetchall()
 	tmp2 = tmp[0]
+	template_used = tmp2[3]
 	global  mt, nt, ut, it, lt, ht
 	nt = [] # info (description or label of link)
 	mt = [] # template
@@ -123,18 +124,16 @@ def home(request,addy):
 	list_debug = list(listx)
 	#except:
 	#	return render(request, 'web_fail.html')
-	x1 = nt[25].split(' ',1)[0]  #Street Number
-	x2 = nt[25].split(' ',1)[1]  #Street Name
-	x3 = nt[26]                  #City
-	x4 = nt[27]                  #State
-
-	
 	
 	request.session["web_addy"] = template
-	
 	tcur=int(time.time())
-	
-	return render(request, template, {'list':list_debug, 'Tmp2':tmp2,'lines':l,'x1':x1,'x2':x2,'x3':x3,'x4':x4,'TCUR':tcur})
+	if template_used == 'B':
+		x1 = nt[25].split(' ',1)[0]  #Street Number
+		x2 = nt[25].split(' ',1)[1]  #Street Name
+		x3 = nt[26]                  #City
+		x4 = nt[27]                  #State
+		return render(request, template, {'list':list_debug, 'Tmp2':tmp2,'lines':l,'x1':x1,'x2':x2,'x3':x3,'x4':x4,'TCUR':tcur})
+	return render(request, template, {'list':list_debug, 'Tmp2':tmp2,'lines':l,'TCUR':tcur})
 
 	
 def web_link(request,hook):
@@ -176,6 +175,7 @@ def web(request,addy):
 	cursor.execute(sql)
 	tmp = cursor.fetchall()
 	tmp2 = tmp[0]
+	template_used = tmp2[3]
 	global  mt, nt, ut, it, lt, ht
 	nt = []
 	mt = []
@@ -193,7 +193,8 @@ def web(request,addy):
 	active_website = max(ut)
 		# Assign each nt value (link_number) as array number to info
 		# 
-		
+
+
 	request.session["active_website"] = active_website
 		#template = "web.html"
 	listx = zip(mt,nt,it,lt,ht)
@@ -229,36 +230,34 @@ def web(request,addy):
 		if ftype == "image_change":
 			request.session["change"] = 'logo'
 			form = ImageForm(request.POST, request.FILES)
-#			request.session["active_db"] = request.session["addy"]
-#			db = request.session["active_db"]
 			web_site = request.session["addy"]			
 			im = Image.open(request.FILES['image'])
 			width, height = im.size			
-			save_file2(request,request.FILES['image'], web_site)
+			save_file2(request,request.FILES['image'], web_site,template_used)
 			request.session["width"] = width
 			request.session["height"] = height
-			
 			ratio = width / float(height)
 			multiplier = 40 * ratio
 			request.session["width"] = multiplier
 			return done_page_edit(request)
-			#return render(request,'testhtml.html')
+
 		elif ftype == "back_change":
 			request.session["change"] = 'back'
 			form = ImageForm(request.POST, request.FILES)
-#			request.session["active_db"] = request.session["addy"]
-#			db = request.session["active_db"]
 			web_site = request.session["addy"]
 			im = Image.open(request.FILES['image'])
 			width, height = im.size
-			save_file2(request,request.FILES['image'], web_site)
-		
-			
-			#ratio = width / float(height)
-			#multiplier = 40 * ratio
-			#request.session["width"] = multiplier
+			save_file2(request,request.FILES['image'], web_site,template_used)
 			return done_page_edit(request)
-			
+		elif ftype[:5] == 'slide':
+			request.session["change"] = ftype
+			form = ImageForm(request.POST, request.FILES)
+			web_site = request.session["addy"]			
+			im = Image.open(request.FILES['image'])
+			width, height = im.size			
+			save_file2(request,request.FILES['image'], web_site,template_used)
+			return done_page_edit(request)
+
 		elif ftype == "page":
 			tmp = request.POST
 			edit1 = tmp.get("page_1_1")
@@ -269,27 +268,25 @@ def web(request,addy):
 				
 		else:	
 			tmp = request.POST
-			link1 = tmp.get("link1_name")
-			link2 = tmp.get("link2_name")
-			link3 = tmp.get("link3_name")
-			link4 = tmp.get("link4_name")
-			id1 = tmp.get("id1")
-			id2 = tmp.get("id2")
-			id3 = tmp.get("id3")
-			id4 = tmp.get("id4")
-			if id1 > 0:
-				request.session["link"] = link1
-				request.session["id"] = id1
-			elif id2 > 0:
-				request.session["link"] = link2
-				request.session["id"] = id2
-			elif id3 > 0:
-				request.session["link"] = link3
-				request.session["id"] = id3	
-			else:
-				request.session["link"] = link4
-				request.session["id"] = id4		
+			id_tmp = []
+			link_tmp = []
 
+			for i in range(1,5):  # This is set for 4 links but increase to whatever
+				link_name = "link" + str(i) + "_name"
+				id_name = "id" + str(i)
+				link_value = tmp.get(link_name)
+				id_value = tmp.get(id_name)
+				id_tmp.append(id_value)
+				link_tmp.append(link_value)
+			id_link_zip = list(zip(id_tmp,link_tmp))
+
+			for i in id_link_zip:
+				try:
+					dummy = int(i[0])
+					request.session["link"] = i[1]
+					request.session["id"] = i[0]
+				except:
+					dummy = 0
 		return done_page_edit(request)
 		
 	else:
@@ -457,7 +454,7 @@ def page_delete(request):
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Save File for Image @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-def save_file2(request,file, db):
+def save_file2(request,file, db,template_used):
 	path = path_local() + 'wec_company'
 	filename = file._get_name()
 	# create directory to save images if one doesn't exist
@@ -469,12 +466,15 @@ def save_file2(request,file, db):
 	for chunk in file.chunks():
 		fd.write(chunk)
 	fd.close()
-		
+
 	# rename image to required name
 	if request.session["change"] == 'logo':
-		fn = "logoA.jpg"
+		fn = "logo" + template_used + ".jpg"
+	elif request.session["change"] == 'back':
+		fn = "back" + template_used + ".jpg"
 	else:
-		fn = "backB.jpg"	
+		fn = request.session["change"] + ".jpg"
+	
 	
 	try:
 		os.remove('%s/%s/%s'%(str(path),db,str(fn)))
